@@ -7,11 +7,11 @@ import { HomeComponent } from './components/home/home.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
-import { AddBooksComponent } from './components/Books/add-books/add-books.component';
+import { AddBooksComponent } from './book/add-books/add-books.component';
 import { AddAuthorComponent } from './components/add-author/add-author.component';
-import { GetAllBooksComponent } from './components/Books/get-all-books/get-all-books.component';
+import { GetAllBooksComponent } from './book/get-all-books/get-all-books.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddPublisherComponent } from './components/Books/add-publisher/add-publisher.component'
+import { AddPublisherComponent } from './book/add-publisher/add-publisher.component'
 
 @NgModule({
   declarations: [
