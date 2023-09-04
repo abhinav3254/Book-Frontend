@@ -1,0 +1,10 @@
+.pad-one {
+    box-shadow: 2px 2px 2px blueviolet;
+    border: 2px solid black;
+    padding: 2rem;
+    margin: 1rem;
+}
+
+.pad-one img {
+    width: 10rem;
+}

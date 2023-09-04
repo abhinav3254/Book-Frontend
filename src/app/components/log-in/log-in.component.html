@@ -1,0 +1,20 @@
+<div class="container">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="form-inside">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
+                    name="username">
+                <label for="floatingInput">username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" ngModel
+                    name="password">
+                <label for="floatingPassword">password</label>
+            </div>
+            <div class="d-grid gap-2" style="margin-top: 10px;">
+                <button class="btn btn-primary" type="submit" value="submit">login</button>
+            </div>
+        </div>
+    </form>
+    {{error|json}}
+</div>
