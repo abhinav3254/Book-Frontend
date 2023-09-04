@@ -1,0 +1,29 @@
+<div class="container">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+        <div class="form-inside">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
+                    name="name">
+                <label for="floatingInput">Name of Author</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
+                    name="dob">
+                <label for="floatingInput">YYYY-MM-DD</label>
+            </div>
+            <!-- <div class="conatiner">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" ngModel name="dob">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+                </mat-form-field>
+            </div> -->
+
+            <div class="d-grid gap-2" style="margin-top: 10px;">
+                <button class="btn btn-primary" type="submit" value="submit">login</button>
+            </div>
+        </div>
+    </form>
+</div>
