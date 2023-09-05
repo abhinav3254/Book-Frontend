@@ -17,27 +17,37 @@ export class HomeComponent implements OnInit {
   }
   error: any;
 
-  listOld: Array<string> = [];
-  list: Array<string> = [];
+  listOld: Array<number> = [];
+  list: Array<number> = [];
   bookIdListLength: any = 0;
+  data = {
+    "list": [] as number[],
+  };
 
   addToCart(bookId: any) {
     // Retrieve the old list from Local Storage
     const listOld = window.localStorage.getItem('list');
-    const oldArray = listOld ? listOld.split(',') : [];
+    const oldArray = listOld ? listOld.split(',').map(Number) : [];
 
     // Concatenate the old list with the new bookId and update this.list
-    this.list = oldArray.concat(bookId);
+    this.list = oldArray.concat(Number(bookId));
 
     // Store the updated list back in Local Storage
     window.localStorage.setItem('list', this.list.join(','));
 
-    // show alert so that cart icon will get updated
+    // Show alert so that the cart icon will get updated
     window.alert('Item Added to cart');
 
     // Optionally, update the bookIdListLength
     this.bookIdListLength = this.list.length;
+
+    // Update data.list with the same data as this.list
+    this.data.list = this.list;
+
+    // Log this.data for debugging purposes
+    console.log(this.data);
   }
+
 
 
   // Demo Data for testing of front end
