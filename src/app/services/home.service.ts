@@ -15,4 +15,10 @@ export class HomeService {
     return this.http.get(url, { headers: header });
   }
 
+  public addToCart(list: string) {
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    const url = 'http://localhost:9091/cart/add';
+    return this.http.post(url, list, { headers: header })
+  }
+
 }

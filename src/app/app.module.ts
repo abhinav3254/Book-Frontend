@@ -18,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { AddToCartComponent } from './components/Book/add-to-cart/add-to-cart.component';
+import { PlaceOrderComponent } from './components/Book/place-order/place-order.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MatSelectModule } from '@angular/material/select';
     AddBooksComponent,
     GetAllBooksComponent,
     AddPublisherComponent,
-    AddAuthorComponent
+    AddAuthorComponent,
+    AddToCartComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 <!-- *ngFor="let book of booksDemo" -->
 <!--<div class="col-sm" *ngFor="let book of books">  -->
+cart :- {{bookIdListLength}}
 <div *ngFor="let book of booksDemo">
   <div class="container">
     <div class="left">
@@ -7,23 +8,15 @@
         <h2>{{ book.title }}</h2>
         <p>{{ book.shortDescription }}</p>
         <div class="left-btn">
-          <button type="button" class="btn btn-primary">
-            <img
-              src="https://img.icons8.com/?size=50&id=9671&format=png"
-              width="20px"
-              style="padding: 1px; margin: 2px 5px"
-              alt=""
-            />
+          <button type="button" class="btn btn-primary" (click)="addToCart(book._id)">
+            <img src="https://img.icons8.com/?size=50&id=9671&format=png" width="20px"
+              style="padding: 1px; margin: 2px 5px" alt="" />
             add to cart
           </button>
           <p>{{ book.pageCount | currency : "INR" }}</p>
           <button type="button" class="btn btn-info">
-            <img
-              src="https://img.icons8.com/?size=1x&id=1675&format=png"
-              style="padding: 1px; margin: 2px 5px"
-              width="20px"
-              alt=""
-            />details
+            <img src="https://img.icons8.com/?size=1x&id=1675&format=png" style="padding: 1px; margin: 2px 5px"
+              width="20px" alt="" />details
           </button>
         </div>
       </div>
