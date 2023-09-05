@@ -15,4 +15,10 @@ export class AddPublisherService {
     return this.http.post(url, myFormValue, { headers: header });
   }
 
+  public getAllPublihser(): Observable<any> {
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    const url = 'http://localhost:9091/publisher/all';
+    return this.http.get(url, { headers: header });
+  }
+
 }

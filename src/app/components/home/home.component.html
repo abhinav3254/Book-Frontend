@@ -1,9 +1,33 @@
-<p>home works!</p>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm pad-one" *ngFor="let book of books">
-            <img src="{{book.thumbnailUrl}}" alt="">
+<!-- *ngFor="let book of booksDemo" -->
+<!--<div class="col-sm" *ngFor="let book of books">  -->
+<div *ngFor="let book of booksDemo">
+  <div class="container">
+    <div class="left">
+      <div class="left-main">
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.shortDescription }}</p>
+        <div class="left-btn">
+          <button type="button" class="btn btn-primary">
+            <img
+              src="https://img.icons8.com/?size=50&id=9671&format=png"
+              width="20px"
+              style="padding: 1px; margin: 2px 5px"
+              alt=""
+            />
+            add to cart
+          </button>
+          <p>{{ book.pageCount | currency : "INR" }}</p>
+          <button type="button" class="btn btn-info">
+            <img
+              src="https://img.icons8.com/?size=1x&id=1675&format=png"
+              style="padding: 1px; margin: 2px 5px"
+              width="20px"
+              alt=""
+            />details
+          </button>
         </div>
+      </div>
     </div>
+    <div class="right"><img src="{{ book.thumbnailUrl }}" alt="" /></div>
+  </div>
 </div>

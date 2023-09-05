@@ -8,10 +8,17 @@ import { Observable } from 'rxjs';
 export class AddAuthorService {
 
   constructor(private http: HttpClient) { }
+
   public addAuthor(myFormValue: any): Observable<any> {
     var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
     const url = 'http://localhost:9091/author/add';
     return this.http.post(url, myFormValue, { headers: header });
+  }
+
+  public getAllAuthor(): Observable<any> {
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    const url = 'http://localhost:9091/author/all';
+    return this.http.get(url, { headers: header });
   }
 
 }
