@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  books: any;
+  constructor(private homeServices: HomeService) { }
+  ngOnInit(): void {
+    this.homeServices.getAllBooks().subscribe((res) => {
+      console.log(res);
+      this.books = res;
+    })
+  }
 
-  books = [
+  // Demo Data for testing of front end
+  booksDemo = [
     {
       "_id": 1,
       "title": "Unlocking Android",

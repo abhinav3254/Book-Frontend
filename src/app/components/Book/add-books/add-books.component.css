@@ -1,4 +1,16 @@
+.container {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
 .form-inside {
     width: 50%;
     margin: 0px auto;
+}
+
+.select-css {
+    width: 100%;
+    margin: 1rem 0px;
+    padding: 10px;
 }
