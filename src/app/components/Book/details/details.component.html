@@ -6,5 +6,20 @@
     <div class="container" style="text-align: center;">
         <h1 id="h1" style="margin-top: 2rem;">{{bookDetails.title}}</h1>
         <p id="p1" style="font-size: 1.2rem;">{{bookDetails.description}}</p>
+
+        <div class="container" id="publisher-author">
+            <button type="button" class="btn btn-primary btn-lg">{{bookDetails.author.authorName}}</button>
+            <button type="button" class="btn btn-secondary btn-lg">{{bookDetails.publishers.publisherName}}</button>
+        </div>
+
+        <div class="container" id="publisher-author">
+            <button type="button" class="btn btn-outline-success">{{bookDetails.genre}}</button>
+            <button type="button" class="btn btn-outline-danger">{{bookDetails.category}}</button>
+        </div>
+
+        <button type="button" class="btn btn-danger">{{bookDetails.price | currency:'INR'}}</button>
+
+
+
     </div>
 </div>

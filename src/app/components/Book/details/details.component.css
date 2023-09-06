@@ -1,8 +1,10 @@
 #c1 {
     margin: 2rem 4rem;
     padding: 1rem;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
+    text-align: center;
+    background-color: #C0DBEA;
 }
 
 #h1 {
@@ -13,4 +15,11 @@
 
 #p1 {
     font-family: 'DM Sans', sans-serif, 'Inter', sans-serif;
+}
+
+#publisher-author {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
