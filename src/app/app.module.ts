@@ -20,6 +20,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { AddToCartComponent } from './components/Book/add-to-cart/add-to-cart.component';
 import { PlaceOrderComponent } from './components/Book/place-order/place-order.component';
+import { CartComponent } from './components/cart/cart.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { PlaceOrderComponent } from './components/Book/place-order/place-order.c
     AddPublisherComponent,
     AddAuthorComponent,
     AddToCartComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    CartComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,9 @@ import { PlaceOrderComponent } from './components/Book/place-order/place-order.c
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBadgeModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
