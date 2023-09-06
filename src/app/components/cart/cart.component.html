@@ -1,13 +1,12 @@
-<!-- *ngFor="let book of booksDemo" -->
-<!--<div class="col-sm" *ngFor="let book of books">  -->
+<!-- <p *ngFor="let cartItem of cartItems">{{ cartItem | json }}</p> -->
 
-<div *ngFor="let book of books">
+<!-- <div *ngFor="let book of cartItems">
   <div class="container">
     <div class="left">
       <div class="left-main">
         <h2>{{ book.title }}</h2>
         <p>{{ book.description }}</p>
-        <div class="left-btn">
+         <div class="left-btn">
           <button
             type="button"
             class="btn btn-primary"
@@ -30,9 +29,26 @@
               alt=""
             />details
           </button>
-        </div>
+        </div> 
       </div>
     </div>
     <div class="right"><img src="{{ book.imageUrl }}" alt="" /></div>
   </div>
+</div> -->
+<div class="scroll">
+  <div *ngFor="let book of cartItems">
+    <div class="container">
+      <div class="left">
+        <div class="left-main">
+          <h2>{{ book.title }}</h2>
+          <p>{{ book.description }}</p>
+        </div>
+      </div>
+      <div class="right"><img src="{{ book.imageUrl }}" alt="" /></div>
+    </div>
+  </div>
+</div>
+<div class="bottom-button-set">
+  <button>Place Order</button>
+  <button (click)="deleteAllItemsFromCart()">Delete All Items From Cart</button>
 </div>
