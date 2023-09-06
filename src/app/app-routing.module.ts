@@ -7,6 +7,8 @@ import { AddBooksComponent } from './components/Book/add-books/add-books.compone
 import { AddPublisherComponent } from './components/Book/add-publisher/add-publisher.component';
 import { AddAuthorComponent } from './components/Book/add-author/add-author.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PlaceOrderComponent } from './components/Book/place-order/place-order.component';
+import { DetailsComponent } from './components/Book/details/details.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent
+  },
+  {
+    path: 'order',
+    component: PlaceOrderComponent
+  },
+  {
+    path: 'details',
+    component: DetailsComponent
   }
 ];
 

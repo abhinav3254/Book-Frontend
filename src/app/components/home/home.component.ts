@@ -56,6 +56,10 @@ export class HomeComponent implements OnInit {
     this.hidden = !this.hidden;
   }
 
+  public viewDetails(id: any) {
+    window.localStorage.setItem('detailsToShow', id);
+  }
+
 }
 
 interface Publishers {

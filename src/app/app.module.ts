@@ -24,6 +24,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { DetailsComponent } from './components/Book/details/details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AddToCartComponent,
     PlaceOrderComponent,
     CartComponent,
-    NavBarComponent
+    NavBarComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
