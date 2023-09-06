@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { NavbarService } from 'src/app/services/navbar.service';
 import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
@@ -7,11 +8,14 @@ import { SignupService } from 'src/app/services/signup.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
 
   error: any;
 
-  constructor(private signUp: SignupService) { }
+  constructor(private signUp: SignupService, public nav: NavbarService) { }
+  ngOnInit(): void {
+    this.nav.hide();
+  }
 
   public formSubmit(myForm: NgForm) {
 

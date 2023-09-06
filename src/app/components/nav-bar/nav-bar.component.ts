@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,5 +12,7 @@ export class NavBarComponent {
     window.localStorage.removeItem('token');
     window.alert('Logged Out');
   }
+
+  constructor(public nav: NavbarService) { }
 
 }

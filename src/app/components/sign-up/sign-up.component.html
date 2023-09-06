@@ -1,6 +1,6 @@
 <div class="container">
     <form #myForm="ngForm" (ngSubmit)="formSubmit(myForm)">
-        <div class="form-inside">
+        <div class="form-inside" style="text-align: center;">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="John Doe" ngModel name="name">
                 <label for="floatingInput">Name</label>
@@ -33,6 +33,7 @@
             <div class="d-grid gap-2" style="margin-top: 10px;">
                 <button class="btn btn-primary" type="submit" value="submit">SignUp</button>
             </div>
+            <p class="p-new-user"><a href="/">Already User? Login</a></p>
         </div>
     </form>
 

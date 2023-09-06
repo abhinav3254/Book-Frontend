@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
-export class LogInComponent {
+export class LogInComponent implements OnInit {
 
   error: any;
 
-  constructor(private logInService: LoginService, private route: Router) { }
+  constructor(private logInService: LoginService, private route: Router, public nav: NavbarService) { }
+  ngOnInit(): void {
+    this.nav.hide();
+  }
 
   public onSubmit(myFrom: NgForm) {
     console.log(myFrom.value);
