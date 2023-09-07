@@ -8,7 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class PlaceOrderComponent implements OnInit {
 
-  public orderItems: Orders[] = [];
+  public orderItems: Root | undefined;
 
   constructor(private cartService: CartService) { }
 
@@ -16,13 +16,17 @@ export class PlaceOrderComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getAllOrders().subscribe((res) => {
       console.log(res);
-      this.orderItems = res as Orders[];
+      this.orderItems = res as Root;
     });
   }
 
 }
 
-export interface Orders {
+
+
+export type Root = Root2[]
+
+export interface Root2 {
   id: number
   books: Book[]
   user: User

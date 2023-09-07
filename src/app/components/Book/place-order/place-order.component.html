@@ -1,4 +1,15 @@
-<p>place-order works!</p>
-<!-- {{ orderItems.books.imageUrl }} -->
+<div id="top" style="border: 1px solid black; margin: 1rem;" *ngFor="let orderItem of orderItems">
+    <div id="top2" style="border: 1px solid red; margin: 1rem; text-align: center;"
+        *ngFor="let book of orderItem.books">
+        <!-- Access and display book properties -->
+        <img src="{{book.imageUrl}}" alt="">
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.description }}</p>
+        <!-- Other book properties -->
 
-{{ orderItems | json }}
+        <!-- Access and display user properties -->
+        <h3>{{ orderItem.user.username }}</h3>
+        <p>{{ orderItem.user.email }}</p>
+        <!-- Other user properties -->
+    </div>
+</div>
