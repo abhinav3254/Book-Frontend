@@ -14,4 +14,16 @@ export class CartService {
     return this.http.post(url, listOfBook, { headers: header });
   }
 
+  public saveToCart(listOfBook: any) {
+    const url = 'http://localhost:9091/orders/order';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, listOfBook, { headers: header });
+  }
+
+  public getAllOrders() {
+    const url = 'http://localhost:9091/orders/all';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
 }

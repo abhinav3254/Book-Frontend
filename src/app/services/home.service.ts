@@ -21,4 +21,10 @@ export class HomeService {
     return this.http.post(url, list, { headers: header })
   }
 
+  public isAdmin() {
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    const url = 'http://localhost:9091/user/isAdmin';
+    return this.http.get(url, { headers: header });
+  }
+
 }

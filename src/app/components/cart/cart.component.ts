@@ -53,6 +53,16 @@ export class CartComponent implements OnInit {
     window.location.reload();
   }
 
+  // For making order
+  orderIt() {
+    const stringArray = (window.localStorage.getItem('list'))?.split(',');
+    const numberArray2 = stringArray?.map(str => parseInt(str, 10));
+    console.log(numberArray2);
+
+    this.cartService.saveToCart(numberArray2).subscribe((res: any) => { console.log(res); const thiscartItems = res as Book[]; this.cartItems = thiscartItems });
+    window.alert('Order Placed');
+  }
+
 
 }
 

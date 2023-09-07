@@ -9,6 +9,7 @@ import { AddAuthorComponent } from './components/Book/add-author/add-author.comp
 import { CartComponent } from './components/cart/cart.component';
 import { PlaceOrderComponent } from './components/Book/place-order/place-order.component';
 import { DetailsComponent } from './components/Book/details/details.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'details',
     component: DetailsComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 

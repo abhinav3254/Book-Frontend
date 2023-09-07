@@ -12,10 +12,25 @@ export class HomeComponent implements OnInit {
   constructor(private homeServices: HomeService, public nav: NavbarService) { }
   ngOnInit(): void {
     this.nav.show();
+    // to get all the books api call
     this.homeServices.getAllBooks().subscribe((res) => {
       console.log(res);
       this.books = res;
-    })
+    });
+
+    // to get wether the user is admin or not
+    this.homeServices.isAdmin().subscribe((res) => {
+      // console.log(res);
+    }, error => { // second parameter is to listen for error
+      // console.log("role is :- " + error.error.text);
+
+      if (error.error.text === '1#1$') {
+        // window.alert('admin');
+        window.localStorage.setItem('role', error.error.text);
+      } else {
+        // window.alert('user');
+      }
+    });
   }
   error: any;
 

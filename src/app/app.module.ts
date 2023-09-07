@@ -18,13 +18,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { AddToCartComponent } from './components/Book/add-to-cart/add-to-cart.component';
 import { PlaceOrderComponent } from './components/Book/place-order/place-order.component';
 import { CartComponent } from './components/cart/cart.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DetailsComponent } from './components/Book/details/details.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +36,11 @@ import { DetailsComponent } from './components/Book/details/details.component';
     GetAllBooksComponent,
     AddPublisherComponent,
     AddAuthorComponent,
-    AddToCartComponent,
     PlaceOrderComponent,
     CartComponent,
     NavBarComponent,
-    DetailsComponent
+    DetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

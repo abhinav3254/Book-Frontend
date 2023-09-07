@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/services/navbar.service';
 
 @Component({
@@ -6,13 +6,26 @@ import { NavbarService } from 'src/app/services/navbar.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
+
+  constructor(public nav: NavbarService) {
+  }
+  ngOnInit(): void {
+    // this.checkUserRole();
+  }
 
   logout() {
-    window.localStorage.removeItem('token');
+    window.localStorage.clear();
     window.alert('Logged Out');
   }
 
-  constructor(public nav: NavbarService) { }
+  public checkUserRole(): Boolean {
+    if (localStorage.getItem("role") === null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
 
 }

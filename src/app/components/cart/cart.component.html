@@ -39,7 +39,7 @@
   <div *ngFor="let book of cartItems">
     <div class="container">
       <div class="left">
-        <div class="left-main" style="margin-right: 2rem;">
+        <div class="left-main" style="margin-right: 2rem">
           <h2>{{ book.title }}</h2>
           <p>{{ book.description }}</p>
         </div>
@@ -49,6 +49,6 @@
   </div>
 </div>
 <div class="bottom-button-set">
-  <button routerLink="/order">Place Order</button>
+  <button routerLink="/order" (click)="orderIt()">Place Order</button>
   <button (click)="deleteAllItemsFromCart()">Delete All Items From Cart</button>
 </div>
