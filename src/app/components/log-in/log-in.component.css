@@ -1,13 +1,42 @@
 .container {
     margin-top: 5rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    box-shadow: horizontal-offset vertical-offset blur spread color;
+
+    /* Example box shadow: */
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
+
+.container h1 {
+    font-family: cursive;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.container p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#one {
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
 
 .form-inside {
     width: 50%;
     padding: 2rem;
     margin: 0px auto;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
     border-radius: 1rem;
+}
+
+button {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .p-new-user {
@@ -20,11 +49,14 @@
     color: blue;
     font-size: 1.2rem;
     transition: all 0.5s;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 .p-new-user a:hover {
     margin-top: 5px;
     color: black;
-    border: 1px solid blue;
     padding: 5px 10px;
+    background-color: #ED7B7B;
+    color: white;
 }

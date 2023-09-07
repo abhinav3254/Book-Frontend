@@ -10,6 +10,10 @@
     border-radius: 5px;
 }
 
+button {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 .p-new-user {
     margin: 20px auto;
     cursor: pointer;
@@ -20,11 +24,14 @@
     color: blue;
     font-size: 1.2rem;
     transition: all 0.5s;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
 .p-new-user a:hover {
     margin-top: 5px;
     color: black;
-    border: 1px solid blue;
     padding: 5px 10px;
+    background-color: #ED7B7B;
+    color: white;
 }
