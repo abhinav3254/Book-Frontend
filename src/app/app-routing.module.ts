@@ -10,6 +10,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { PlaceOrderComponent } from './components/Book/place-order/place-order.component';
 import { DetailsComponent } from './components/Book/details/details.component';
 import { SearchComponent } from './components/search/search.component';
+import { AddCategoryComponent } from './components/Book/add-category/add-category.component';
+import { CategoryComponent } from './components/category/category.component';
 
 const routes: Routes = [
   {
@@ -55,6 +57,14 @@ const routes: Routes = [
   {
     path: 'order',
     component: PlaceOrderComponent
+  },
+  {
+    path: 'addCategory',
+    component: AddCategoryComponent
+  },
+  {
+    path: 'category',
+    component: CategoryComponent
   }
 ];
 

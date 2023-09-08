@@ -25,6 +25,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DetailsComponent } from './components/Book/details/details.component';
 import { SearchComponent } from './components/search/search.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AddCategoryComponent } from './components/Book/add-category/add-category.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { SearchComponent } from './components/search/search.component';
     CartComponent,
     NavBarComponent,
     DetailsComponent,
-    SearchComponent
+    SearchComponent,
+    AddCategoryComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { SearchComponent } from './components/search/search.component';
     MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule,
     MatSelectModule,
     MatBadgeModule,
-    ScrollingModule
+    ScrollingModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

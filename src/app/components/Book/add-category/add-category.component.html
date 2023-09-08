@@ -1,0 +1,22 @@
+<div class="main-one">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-inside" style="text-align: center">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="name"
+        />
+        <label for="floatingInput">name</label>
+      </div>
+      <div class="d-grid gap-2" style="margin-top: 10px">
+        <button class="btn btn-primary" type="submit" value="submit">
+          Add Category
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

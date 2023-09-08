@@ -23,4 +23,35 @@ export class BookutilityService {
     return this.http.get(url, { headers: header });
   }
 
+  public getAllCategory(): Observable<any> {
+    const url = 'http://localhost:9091/categories/all';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
+  public addCategory(formValue: any): Observable<any> {
+    const url = 'http://localhost:9091/categories/add';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, formValue, { headers: header });
+  }
+
+  public getSuggestion(): Observable<any> {
+    const url = 'http://localhost:9091/book/suggest';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
+  // searching book By category
+
+  public searchBookByCategory(value: any) {
+    const url = 'http://localhost:9091/book/category/' + value;
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
+  sharedData: any;
+  public setSharedDataValue(value: any) {
+    this.sharedData = value;
+  }
+
 }

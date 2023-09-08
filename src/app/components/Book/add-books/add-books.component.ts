@@ -1,8 +1,10 @@
+import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AddAuthorService } from 'src/app/services/add-author.service';
 import { AddBookService } from 'src/app/services/add-book.service';
 import { AddPublisherService } from 'src/app/services/add-publisher.service';
+import { BookutilityService } from 'src/app/services/bookutility.service';
 
 @Component({
   selector: 'app-add-books',
@@ -17,17 +19,22 @@ export class AddBooksComponent implements OnInit {
 
   publishers: any;
 
-  constructor(private addBookService: AddBookService, private addAuthorService: AddAuthorService, private addPublihserService: AddPublisherService) { }
+  categories: any;
+
+  constructor(private addBookService: AddBookService, private addAuthorService: AddAuthorService, private addPublihserService: AddPublisherService
+    , private bookUtiltiy: BookutilityService
+  ) { }
   ngOnInit(): void {
     this.addPublihserService.getAllPublihser().subscribe((res) => {
-      console.log(res);
       this.publishers = res;
     });
 
     this.addAuthorService.getAllAuthor().subscribe((res) => {
-      console.log(res);
       this.authors = res;
     });
+    this.bookUtiltiy.getAllCategory().subscribe((res) => {
+      this.categories = res;
+    })
   }
 
   onSubmit(myForm: NgForm) {

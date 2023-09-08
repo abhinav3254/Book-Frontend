@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { BookutilityService } from 'src/app/services/bookutility.service';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,10 +12,24 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public nav: NavbarService) {
-  }
+  categories: any;
+
+  constructor(
+    public nav: NavbarService,
+    private bookUtilityService: BookutilityService,
+    private router: Router,
+    private cdRef: ChangeDetectorRef
+  ) { }
+
   ngOnInit(): void {
     // this.checkUserRole();
+    this.bookUtilityService.getAllCategory().subscribe((res) => {
+      console.log(res);
+      this.categories = res;
+    });
+
+    // Trigger change detection to refresh the view
+    this.cdRef.detectChanges();
   }
 
   logout() {
@@ -25,6 +43,11 @@ export class NavBarComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  public getValueFromCategory(value: any) {
+    console.log(value);
+    window.localStorage.setItem('category', value);
   }
 
 

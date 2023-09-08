@@ -11,7 +11,14 @@ export class SearchComponent implements OnInit {
 
   books: Book[] = [];
 
-  ngOnInit(): void { }
+  autocompleteSuggestions: any;
+
+  ngOnInit(): void {
+    this.bookUtilityService.getSuggestion().subscribe((res) => {
+      console.log('suggestion is :- ' + res);
+      this.autocompleteSuggestions = res;
+    });
+  }
 
   searchQuery: string = ''
   getSearchQuery() {

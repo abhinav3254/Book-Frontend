@@ -1,62 +1,117 @@
 <div class="container" style="margin-top: 20px">
-    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
-        <div class="form-inside">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-                    name="image" />
-                <label for="floatingInput">Image Link</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-                    name="price" />
-                <label for="floatingInput">Price</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-                    name="title" />
-                <label for="floatingInput">Title</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-                    name="genre" />
-                <label for="genre">Genre</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-                    name="category" />
-                <label for="floatingInput">Category</label>
-            </div>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="form-inside">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="image"
+        />
+        <label for="floatingInput">Image Link</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="price"
+        />
+        <label for="floatingInput">Price</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="title"
+        />
+        <label for="floatingInput">Title</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="genre"
+        />
+        <label for="genre">Genre</label>
+      </div>
 
-            <!-- Author Spinner -->
-            <label>Author Name</label>
+      <label>Category Name</label>
 
-            <select class="select-css" id="authorSelect" ngModel name="authorId">
-                <option value="{{ author.id }}" *ngFor="let author of authors">
-                    {{ author.id }} || {{ author.authorName }}
-                </option>
-            </select>
+      <select class="select-css" id="categorySelect" ngModel name="category">
+        <option
+          value="{{ category.categoryName }}"
+          *ngFor="let category of categories"
+        >
+          {{ category.categoryName }}
+        </option>
+      </select>
 
-            <br />
+      <!-- <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="category"
+        />
+        <label for="floatingInput">Category</label>
+      </div> -->
 
-            <!-- Publisher Spinner -->
-            <label>Publisher Name</label>
+      <!-- Author Spinner -->
+      <label>Author Name</label>
 
-            <select class="select-css" id="publisherSelect" ngModel name="publisherId">
-                <option value="{{ publisher.id }}" *ngFor="let publisher of publishers">
-                    {{ publisher.id }} || {{ publisher.publisherName }}
-                </option>
-            </select>
+      <select class="select-css" id="authorSelect" ngModel name="authorId">
+        <option value="{{ author.id }}" *ngFor="let author of authors">
+          {{ author.id }} || {{ author.authorName }}
+        </option>
+      </select>
 
-            <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                    style="height: 100px" ngModel name="description"></textarea>
-                <label for="floatingTextarea2">Description</label>
-            </div>
+      <br />
 
-            <div class="d-grid gap-2" style="margin-top: 10px;">
-                <button class="btn btn-primary" type="submit" value="submit">Add Book</button>
-            </div>
-        </div>
-    </form>
-    <img src="{{myForm.value.ImageUrl}}" alt="">
+      <!-- Publisher Spinner -->
+      <label>Publisher Name</label>
+
+      <select
+        class="select-css"
+        id="publisherSelect"
+        ngModel
+        name="publisherId"
+      >
+        <option value="{{ publisher.id }}" *ngFor="let publisher of publishers">
+          {{ publisher.id }} || {{ publisher.publisherName }}
+        </option>
+      </select>
+
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+          ngModel
+          name="description"
+        ></textarea>
+        <label for="floatingTextarea2">Description</label>
+      </div>
+
+      <div class="d-grid gap-2" style="margin-top: 10px">
+        <button class="btn btn-primary" type="submit" value="submit">
+          Add Book
+        </button>
+      </div>
+    </div>
+  </form>
+  <img src="{{ myForm.value.ImageUrl }}" alt="" />
 </div>
