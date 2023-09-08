@@ -8,10 +8,10 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
-  public showAllCartItems(listOfBook: any) {
-    const url = 'http://localhost:9091/cart/all2';
+  public showAllCartItems() {
+    const url = 'http://localhost:9091/cartItem/getAll';
     var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
-    return this.http.post(url, listOfBook, { headers: header });
+    return this.http.get(url, { headers: header });
   }
 
   public saveToCart(listOfBook: any) {

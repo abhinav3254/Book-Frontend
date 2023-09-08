@@ -8,76 +8,41 @@ div.scroll {
     padding: 20px;
 }
 
-.container {
+.one {
     display: flex;
     flex-direction: row;
-
-    margin: 20px auto;
+    justify-content: space-between;
     padding: 10px;
-    background-color: #F1F0E8;
-    transition: all 0.15s;
-    border-radius: 5px;
-    box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.2);
-
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: white;
 }
 
-.container:hover {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+
+img {
+    width: 80px;
+    height: 120px;
 }
 
-.left {
-    flex: 5.8;
-}
-
-.left-main {
-    text-align: center;
-}
-
-.left-btn {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 20px auto;
-}
-
-.left-btn p {
-    border: 2px solid #EF9595;
-    padding: 10px;
-    margin: 2px 8px;
-    border-radius: 5px;
-    transition: all 0.15s;
-}
-
-.left-btn p:hover {
-    background-color: #EF9595;
-    color: white;
+.center {
+    border: 1px solid black;
 }
 
 .right {
-    flex: 0.2;
+    border: 1px solid black;
 }
 
-.right img {
-    width: 150px;
-}
-
-
-.bottom-button-set {
+.right-right-btn {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 20px;
+    flex-direction: column;
+    margin: 5px;
 }
 
-.bottom-button-set button {
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-    background-color: yellowgreen;
+.right-btn {
+    display: flex;
+    flex-direction: column;
 }
 
-.bottom-button-set button:hover {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+.right-btn button {
+    margin: 10px 20px;
 }

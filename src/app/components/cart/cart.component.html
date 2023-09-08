@@ -36,19 +36,25 @@
   </div>
 </div> -->
 <div class="scroll">
-  <div *ngFor="let book of cartItems">
-    <div class="container">
-      <div class="left">
-        <div class="left-main" style="margin-right: 2rem">
-          <h2>{{ book.title }}</h2>
-          <p>{{ book.description }}</p>
-        </div>
+  <div class="one" *ngFor="let cartItem of cartItems" style="border: 1px solid black;">
+    <img src="{{cartItem.book.imageUrl}}" alt="">
+    <div class="center">
+      <p>{{cartItem.book.title}}</p>
+      <p>{{cartItem.finalPrice}}</p>
+    </div>
+    <div class="right">
+      <div class="right-right-btn">
+        <button type="button" class="btn btn-outline-success">+</button>
+        {{cartItem.quantity}}
+        <button type="button" class="btn btn-outline-danger">-</button>
       </div>
-      <div class="right"><img src="{{ book.imageUrl }}" alt="" /></div>
+    </div>
+    <div class="right-btn">
+      <button type="button" class="btn btn-outline-success">Update</button>
+      <button type="button" class="btn btn-outline-danger">Delete</button>
     </div>
   </div>
 </div>
-<div class="bottom-button-set">
-  <button routerLink="/order" (click)="orderIt()">Place Order</button>
-  <button (click)="deleteAllItemsFromCart()">Delete All Items From Cart</button>
-</div>
+
+<button type="button" class="btn btn-outline-success">CheckOut to see final price and enter address</button>
+<button type="button" class="btn btn-outline-danger">Delete All the Items From Cart</button>

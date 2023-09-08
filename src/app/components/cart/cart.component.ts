@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
 
   items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
 
-  public cartItems: Book[] = [];
+  public cartItems: Root[] = [];
 
   constructor(private cartService: CartService) { }
   ngOnInit(): void {
@@ -22,93 +22,75 @@ export class CartComponent implements OnInit {
     const numberArray2 = stringArray?.map(str => parseInt(str, 10));
     console.log(numberArray2);
 
-    this.cartService.showAllCartItems(numberArray2).subscribe((res: any) => { console.log(res); const thiscartItems = res as Book[]; this.cartItems = thiscartItems });
+    this.cartService.showAllCartItems().subscribe((res: any) => {
+      console.log(res);
+      const thiscartItems = res as Root[];
+      this.cartItems = thiscartItems
+    });
 
   }
 
-  calculatePrice() {
-    let i: number = 0;
-    let totalPrice: number = 0;
 
-    while (i < this.cartItems.length) {
-      // Convert the price to a number using parseFloat or parseInt
-      const itemPrice = parseFloat(this.cartItems[i].price);
 
-      // Check if itemPrice is a valid number before adding it
-      if (!isNaN(itemPrice)) {
-        totalPrice += itemPrice;
-      }
-
-      i++;
-    }
-
-    // Now, totalPrice contains the sum of all valid item prices
-    console.log('Total Price:', totalPrice);
+  increasesValue(value: any) {
+    value = value + 1;
   }
 
-  deleteAllItemsFromCart() {
-    window.localStorage.removeItem('list');
-    console.log('Ok')
-    window.alert('Deleted All the Items From LocalStorage');
-    window.location.reload();
+  decreaseValue(value: any) {
+    value = value + 1;
   }
-
-  // For making order
-  orderIt() {
-    const stringArray = (window.localStorage.getItem('list'))?.split(',');
-    const numberArray2 = stringArray?.map(str => parseInt(str, 10));
-    console.log(numberArray2);
-
-    this.cartService.saveToCart(numberArray2).subscribe((res: any) => { console.log(res); const thiscartItems = res as Book[]; this.cartItems = thiscartItems });
-    window.alert('Order Placed');
-  }
-
 
 }
 
-interface Publishers {
-  id: number;
-  publisherName: string;
-  country: string;
+export interface Root {
+  id: number
+  user: User
+  book: Book
+  bookPrice: number
+  quantity: number
+  cgst: number
+  sgst: number
+  discount: number
+  finalPrice: number
 }
 
-interface Author {
-  id: number;
-  authorName: string;
-  dateOfBirth: string;
+export interface User {
+  id: number
+  username: string
+  name: string
+  email: string
+  password: string
+  phone: string
+  address: string
+  status: string
+  role: string
 }
 
-class Book {
-  id: number;
-  publishers: Publishers;
-  author: Author;
-  imageUrl: string;
-  title: string;
-  genre: string;
-  price: string;
-  description: string;
-  category: string;
-
-  constructor(
-    id: number,
-    publishers: Publishers,
-    author: Author,
-    imageUrl: string,
-    title: string,
-    genre: string,
-    price: string,
-    description: string,
-    category: string
-  ) {
-    this.id = id;
-    this.publishers = publishers;
-    this.author = author;
-    this.imageUrl = imageUrl;
-    this.title = title;
-    this.genre = genre;
-    this.price = price;
-    this.description = description;
-    this.category = category;
-  }
+export interface Book {
+  id: number
+  publishers: Publishers
+  author: Author
+  imageUrl: string
+  isbn: string
+  pageCount: string
+  bookStatus: boolean
+  publishDate: string
+  title: string
+  price: string
+  description: string
+  category: string
 }
+
+export interface Publishers {
+  id: number
+  publisherName: string
+  country: string
+}
+
+export interface Author {
+  id: number
+  authorName: string
+  dateOfBirth: string
+}
+
 
