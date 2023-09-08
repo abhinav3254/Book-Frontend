@@ -46,8 +46,9 @@ export class NavBarComponent implements OnInit {
   }
 
   public getValueFromCategory(value: any) {
-    console.log(value);
-    window.localStorage.setItem('category', value);
+    // Sending data from here to category route
+    this.router.navigate(['/category', { data: value }]);
+
   }
 
 

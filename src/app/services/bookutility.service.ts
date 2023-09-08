@@ -54,4 +54,13 @@ export class BookutilityService {
     this.sharedData = value;
   }
 
+
+  // Add Book to the cartItems
+
+  public addToCartItem(bookId: any) {
+    const url = 'http://localhost:9091/cartItem/add?bookId=' + bookId;
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, bookId, { headers: header });
+  }
+
 }

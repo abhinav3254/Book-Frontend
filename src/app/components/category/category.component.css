@@ -1,0 +1,26 @@
+.one {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid black;
+    transition: all 0.5s;
+    background-color: #F0F0F0;
+}
+
+
+.one:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.one img {
+    height: 300px;
+}
+
+.one h4 {
+    margin: 5px;
+    font-size: 1.2rem;
+}

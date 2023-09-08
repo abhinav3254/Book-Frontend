@@ -1,2 +1,21 @@
-<p>category works!</p>
-<button>click me</button>
+<div class="container" id="skills">
+    <p class="intro-about text-center"></p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col" *ngFor="let book of categorySearch">
+                <div class="one">
+                    <img src="{{ book.imageUrl }}" alt="">
+                    <h4>{{book.title}}</h4>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-danger" type="button" (click)="addToCart(book.id)"
+                            routerLink=" /details">Cart</button>
+                        <button class="btn btn-success" type="button" (click)="viewDetails(book.id)"
+                            routerLink="/details">Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

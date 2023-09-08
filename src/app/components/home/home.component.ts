@@ -10,7 +10,7 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class HomeComponent implements OnInit {
   books: Book[] = [];
-  constructor(private homeServices: HomeService, public nav: NavbarService) { }
+  constructor(private homeServices: HomeService, public nav: NavbarService, private bookUtitlity: BookutilityService) { }
   ngOnInit(): void {
     this.nav.show();
     // to get all the books api call
@@ -35,35 +35,12 @@ export class HomeComponent implements OnInit {
   }
   error: any;
 
-  listOld: Array<number> = [];
-  list: Array<number> = [];
-  bookIdListLength: any = 0;
-  data = {
-    "list": [] as number[],
-  };
-
+  // Add Book To the Cart Items
   addToCart(bookId: any) {
-    // Retrieve the old list from Local Storage
-    const listOld = window.localStorage.getItem('list');
-    const oldArray = listOld ? listOld.split(',').map(Number) : [];
-
-    // Concatenate the old list with the new bookId and update this.list
-    this.list = oldArray.concat(Number(bookId));
-
-    // Store the updated list back in Local Storage
-    window.localStorage.setItem('list', this.list.join(','));
-
-    // Show alert so that the cart icon will get updated
-    window.alert('Item Added to cart');
-
-    // Optionally, update the bookIdListLength
-    this.bookIdListLength = this.list.length;
-
-    // Update data.list with the same data as this.list
-    this.data.list = this.list;
-
-    // Log this.data for debugging purposes
-    // console.log(this.data.list);
+    console.log('------>' + bookId);
+    this.bookUtitlity.addToCartItem(bookId).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   hidden = false;
