@@ -14,6 +14,7 @@ import { AddCategoryComponent } from './components/Book/add-category/add-categor
 import { CategoryComponent } from './components/category/category.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { MakeOrderComponent } from './components/Book/make-order/make-order.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'payment',
     component: PaymentComponent
+  },
+  {
+    path: 'make-order',
+    component: MakeOrderComponent
   },
   {
     path: '**',

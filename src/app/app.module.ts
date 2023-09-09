@@ -35,6 +35,8 @@ import { DecreaseToastComponent } from './components/Toasts/decrease-toast/decre
 import { AddedToastComponent } from './components/Toasts/added-toast/added-toast.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MakeOrderComponent } from './components/Book/make-order/make-order.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     AddedToastComponent,
     PageNotFoundComponent,
     PaymentComponent,
+    MakeOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -67,12 +70,16 @@ import { PaymentComponent } from './components/payment/payment.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
-    MatFormFieldModule, MatInputModule, MatNativeDateModule, MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     MatSelectModule,
     MatBadgeModule,
     ScrollingModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

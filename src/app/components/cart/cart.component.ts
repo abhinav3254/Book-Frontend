@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class CartComponent implements OnInit {
 
   public sumOfFinalPrice: number = 0;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
     this.cartService.showAllCartItems().subscribe((res: any) => {
@@ -32,7 +35,10 @@ export class CartComponent implements OnInit {
     });
   }
 
-
+  // checkout
+  goToMakePayment() {
+    this.route.navigate(['/payment', { amountData: this.sumOfFinalPrice }]);
+  }
 
   increasesValue(value: any) {
     this.cartService.increasesValueInTheCart(value).subscribe();

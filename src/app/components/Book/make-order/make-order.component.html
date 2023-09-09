@@ -1,0 +1,10 @@
+<div class="container">
+    <form #myForm="ngForm" (submit)="makeOrder(myForm.value)">
+        <div class="form-floating">
+            <textarea ngModel name="address" class="form-control" placeholder="Leave a comment here"
+                id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Shipping Address</label>
+        </div>
+        <button type="submit" value="submit" class="btn btn-success">Success</button>
+    </form>
+</div>

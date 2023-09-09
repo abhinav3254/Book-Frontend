@@ -1,1 +1,47 @@
-<p>payment works!</p>
+<form #MyFrom="ngForm" (submit)="paymentForm(MyFrom.value)">
+    <div class="conatiner">
+        <div class="form-floating mb-3">
+            <input ngModel name="cardNumber" type="number" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Card Number</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input ngModel name="bankName" type="text" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Bank Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input ngModel name="nameOnCard" type="text" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">Name On Card</label>
+        </div>
+
+
+        <div class="form-floating mb-3">
+            <input ngModel name="cvv" type="number" class="form-control" id="floatingInput"
+                placeholder="name@example.com">
+            <label for="floatingInput">CVV</label>
+        </div>
+
+        <div class="container-date">
+            <mat-form-field style="width: 100%; margin: 10px 0px;">
+                <mat-label>Expiry Date</mat-label>
+                <input ngModel name="expiryDate" matInput [matDatepicker]="picker" ngModel name="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">₹</span>
+            <span class="input-group-text">{{amountData}}</span>
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" ngModel
+                name="amount">
+        </div>
+
+        <button type="submit" value="submit" class="btn btn-outline-success">Pay Now</button>
+    </div>
+</form>

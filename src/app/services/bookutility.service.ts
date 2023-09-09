@@ -63,4 +63,27 @@ export class BookutilityService {
     return this.http.post(url, bookId, { headers: header });
   }
 
+  // make payment
+
+  public makePayment(myFormValue: any) {
+    const url = 'http://localhost:9091/payment/add';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, myFormValue, { headers: header });
+  }
+
+  // make order
+
+  public makeOrder(myFormValue: any) {
+    const url = 'http://localhost:9091/orders/order';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, myFormValue, { headers: header });
+  }
+
+  // get all the orders
+  public getAllOrders() {
+    const url = 'http://localhost:9091/orders/all';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
 }
