@@ -1,49 +1,31 @@
 <!-- search starts from here -->
 <div class="container11">
   <form class="d-flex" #myForm="ngForm" (submit)="getSearchQuery()">
-    <input
-      class="form-control me-2"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-      [(ngModel)]="searchQuery"
-      name="value"
-    />
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchQuery"
+      name="value" />
     <button class="btn btn-outline-success" type="submit" value="submit">
       Search
     </button>
   </form>
 </div>
 
-<div *ngFor="let book of books">
+<div class="container" id="skills">
+  <p class="intro-about text-center"></p>
+
   <div class="container">
-    <div class="left">
-      <div class="left-main">
-        <h2>{{ book.title }}</h2>
-        <p>{{ book.description }}</p>
-        <div class="left-btn">
-          <button type="button" class="btn btn-primary">
-            <img
-              src="assets/cart-svgrepo-com.svg"
-              width="20px"
-              style="padding: 1px; margin: 2px 5px"
-              alt=""
-            />
-            add to cart
-          </button>
-          <p>{{ book.price | currency : "INR" }}</p>
-          <button type="button" class="btn btn-info" routerLink="/details">
-            <img
-              src="assets/details-so-svgrepo-com.svg"
-              style="padding: 1px; margin: 2px 5px"
-              width="20px"
-              alt=""
-            />
-            details
-          </button>
+    <div class="row">
+      <div class="col" *ngFor="let book of books">
+        <div class="one">
+          <img src="{{ book.imageUrl }}" alt="">
+          <h4>{{book.title}}</h4>
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-danger" type="button" (click)="addToCart(book.id)">Cart</button>
+            <button class="btn btn-success" type="button" (click)="viewDetails(book.id)"
+              routerLink="/details">Details</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="right"><img src="{{ book.imageUrl }}" alt="" /></div>
   </div>
+
 </div>

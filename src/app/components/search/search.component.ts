@@ -27,6 +27,17 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  addToCart(bookId: any) {
+    console.log('------>' + bookId);
+    this.bookUtilityService.addToCartItem(bookId).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
+  public viewDetails(id: any) {
+    window.localStorage.setItem('detailsToShow', id);
+  }
+
 }
 
 
