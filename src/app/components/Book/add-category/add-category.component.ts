@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BookutilityService } from 'src/app/services/bookutility.service';
+import { AddedToastComponent } from '../../Toasts/added-toast/added-toast.component';
 
 @Component({
   selector: 'app-add-category',
@@ -9,7 +11,7 @@ import { BookutilityService } from 'src/app/services/bookutility.service';
 })
 export class AddCategoryComponent {
 
-  constructor(private bookUtility: BookutilityService) { }
+  constructor(private bookUtility: BookutilityService, private _snackBar: MatSnackBar) { }
 
   onSubmit(myFrom: NgForm) {
     console.log(myFrom.value);
@@ -18,7 +20,11 @@ export class AddCategoryComponent {
     }, error => {
       console.log(error);
       if (error.status === 200) {
-        window.alert('added book');
+        // toast
+        const durationInSeconds = 2;
+        this._snackBar.openFromComponent(AddedToastComponent, {
+          duration: durationInSeconds * 1000,
+        });
       } else {
         window.alert('something went wrong')
       }

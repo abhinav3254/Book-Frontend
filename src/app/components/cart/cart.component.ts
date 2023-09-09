@@ -12,32 +12,42 @@ export class CartComponent implements OnInit {
     console.log('Change detection cycle');
   }
 
-  items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
+  // items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
 
   public cartItems: Root[] = [];
 
-  constructor(private cartService: CartService) { }
-  ngOnInit(): void {
-    const stringArray = (window.localStorage.getItem('list'))?.split(',');
-    const numberArray2 = stringArray?.map(str => parseInt(str, 10));
-    console.log(numberArray2);
+  public sumOfFinalPrice: number = 0;
 
+  constructor(private cartService: CartService) { }
+
+  ngOnInit(): void {
     this.cartService.showAllCartItems().subscribe((res: any) => {
       console.log(res);
       const thiscartItems = res as Root[];
       this.cartItems = thiscartItems
     });
 
+    this.cartService.getSumOfAllFinalPrice().subscribe((res) => {
+      this.sumOfFinalPrice = res as number;
+    });
   }
 
 
 
   increasesValue(value: any) {
-    value = value + 1;
+    this.cartService.increasesValueInTheCart(value).subscribe();
+    window.location.reload();
   }
 
   decreaseValue(value: any) {
-    value = value + 1;
+    this.cartService.decreaseValueInTheCart(value).subscribe();
+    window.location.reload();
+  }
+
+  deleteItemFromCartItem(value: any) {
+    this.cartService.deleteItemFromCartItem(value).subscribe();
+    window.location.reload();
+    window.location.reload();
   }
 
 }

@@ -44,17 +44,18 @@
     </div>
     <div class="right">
       <div class="right-right-btn">
-        <button type="button" class="btn btn-outline-success">+</button>
+        <button type="button" class="btn btn-outline-success" (click)="increasesValue(cartItem.id)">+</button>
         {{cartItem.quantity}}
-        <button type="button" class="btn btn-outline-danger">-</button>
+        <button type="button" class="btn btn-outline-danger" (click)="decreaseValue(cartItem.id)">-</button>
       </div>
     </div>
     <div class="right-btn">
       <button type="button" class="btn btn-outline-success">Update</button>
-      <button type="button" class="btn btn-outline-danger">Delete</button>
+      <button type="button" class="btn btn-outline-danger" (click)="deleteItemFromCartItem(cartItem.id)">Delete</button>
     </div>
   </div>
 </div>
 
 <button type="button" class="btn btn-outline-success">CheckOut to see final price and enter address</button>
 <button type="button" class="btn btn-outline-danger">Delete All the Items From Cart</button>
+<button type="button" class="btn btn-outline-danger">{{sumOfFinalPrice}}</button>

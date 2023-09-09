@@ -1,10 +1,12 @@
 import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddAuthorService } from 'src/app/services/add-author.service';
 import { AddBookService } from 'src/app/services/add-book.service';
 import { AddPublisherService } from 'src/app/services/add-publisher.service';
 import { BookutilityService } from 'src/app/services/bookutility.service';
+import { AddedToastComponent } from '../../Toasts/added-toast/added-toast.component';
 
 @Component({
   selector: 'app-add-books',
@@ -22,7 +24,7 @@ export class AddBooksComponent implements OnInit {
   categories: any;
 
   constructor(private addBookService: AddBookService, private addAuthorService: AddAuthorService, private addPublihserService: AddPublisherService
-    , private bookUtiltiy: BookutilityService
+    , private bookUtiltiy: BookutilityService, private _snackBar: MatSnackBar
   ) { }
   ngOnInit(): void {
     this.addPublihserService.getAllPublihser().subscribe((res) => {
@@ -46,10 +48,15 @@ export class AddBooksComponent implements OnInit {
       this.error = JSON.stringify(error.error.text);
       console.log(error.status);
       if (error.status == 200) {
-        alert(error.error.text);
+        // toast
+        const durationInSeconds = 2;
+        this._snackBar.openFromComponent(AddedToastComponent, {
+          duration: durationInSeconds * 1000,
+        });
       } else {
         alert(error.error);
       }
     });
+
   }
 }

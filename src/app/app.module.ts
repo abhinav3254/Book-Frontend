@@ -28,6 +28,13 @@ import { SearchComponent } from './components/search/search.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AddCategoryComponent } from './components/Book/add-category/add-category.component';
 import { CategoryComponent } from './components/category/category.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CartToastComponent } from './components/Toasts/cart-toast/cart-toast.component';
+import { IncreaseToastComponent } from './components/Toasts/increase-toast/increase-toast.component';
+import { DecreaseToastComponent } from './components/Toasts/decrease-toast/decrease-toast.component';
+import { AddedToastComponent } from './components/Toasts/added-toast/added-toast.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +53,12 @@ import { CategoryComponent } from './components/category/category.component';
     SearchComponent,
     AddCategoryComponent,
     CategoryComponent,
+    CartToastComponent,
+    IncreaseToastComponent,
+    DecreaseToastComponent,
+    AddedToastComponent,
+    PageNotFoundComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +71,8 @@ import { CategoryComponent } from './components/category/category.component';
     MatSelectModule,
     MatBadgeModule,
     ScrollingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

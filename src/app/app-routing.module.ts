@@ -12,6 +12,8 @@ import { DetailsComponent } from './components/Book/details/details.component';
 import { SearchComponent } from './components/search/search.component';
 import { AddCategoryComponent } from './components/Book/add-category/add-category.component';
 import { CategoryComponent } from './components/category/category.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   {
@@ -65,6 +67,14 @@ const routes: Routes = [
   {
     path: 'category',
     component: CategoryComponent
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import { BookutilityService } from 'src/app/services/bookutility.service';
 import { HomeService } from 'src/app/services/home.service';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { CartToastComponent } from '../Toasts/cart-toast/cart-toast.component';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,8 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class HomeComponent implements OnInit {
   books: Book[] = [];
-  constructor(private homeServices: HomeService, public nav: NavbarService, private bookUtitlity: BookutilityService) { }
+  constructor(private homeServices: HomeService, public nav: NavbarService, private bookUtitlity: BookutilityService, private _snackBar: MatSnackBar) { }
+
   ngOnInit(): void {
     this.nav.show();
     // to get all the books api call
@@ -36,10 +39,17 @@ export class HomeComponent implements OnInit {
   error: any;
 
   // Add Book To the Cart Items
+
+
   addToCart(bookId: any) {
     console.log('------>' + bookId);
     this.bookUtitlity.addToCartItem(bookId).subscribe((res) => {
       console.log(res);
+    });
+    // toast
+    const durationInSeconds = 2;
+    this._snackBar.openFromComponent(CartToastComponent, {
+      duration: durationInSeconds * 1000,
     });
   }
 
@@ -54,6 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
 
 interface Publishers {
   id: number;
