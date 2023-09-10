@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { BookutilityService } from 'src/app/services/bookutility.service';
 
 @Component({
@@ -16,6 +17,25 @@ export class PlaceOrderComponent implements OnInit {
     this.bookUtilityService.getAllOrders().subscribe((res) => {
       this.orders = res as Root2[];
     });
+  }
+
+  // for rating
+  postRating(myFormValue: any, bookId: any) {
+    // console.log(JSON.stringify(myFormValue.value.rating) + "<<<<<<<<<--------form value and bookId --> >>>>>>>>>>>   " + bookId);
+    const values = {
+      rating: '',
+      bookId: ''
+    }
+
+    // values.rating = JSON.stringify(myFormValue.value.rating);
+    values.bookId = JSON.stringify(bookId);
+    values.rating = JSON.stringify(parseInt(JSON.stringify(myFormValue.value.rating).replace(/"/g, ''), 10));
+
+    console.log(values);
+
+    this.bookUtilityService.postRating(values).subscribe();
+
+
   }
 
 }

@@ -86,4 +86,12 @@ export class BookutilityService {
     return this.http.get(url, { headers: header });
   }
 
+  // post Ratings
+
+  public postRating(value: any) {
+    const url = 'http://localhost:9091/rating/add';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, value, { headers: header });
+  }
+
 }
