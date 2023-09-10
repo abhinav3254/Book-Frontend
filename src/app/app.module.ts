@@ -37,6 +37,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PaymentComponent } from './components/payment/payment.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MakeOrderComponent } from './components/Book/make-order/make-order.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { MakeOrderComponent } from './components/Book/make-order/make-order.comp
     AddedToastComponent,
     PageNotFoundComponent,
     PaymentComponent,
-    MakeOrderComponent
+    MakeOrderComponent,
+    ProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

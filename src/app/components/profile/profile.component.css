@@ -1,0 +1,51 @@
+.container {
+    margin: 2rem;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.one {
+    display: flex;
+    flex-direction: row;
+}
+
+.one-left img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.one-right {
+    margin-left: 50px;
+}
+
+.one-right-one {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.address-one {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+}
+
+.address-one img {
+    width: 24px;
+    height: 20px;
+}
+
+.address-one p {
+    font-size: 1.2rem;
+    margin-left: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

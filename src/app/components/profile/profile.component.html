@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="one">
+        <div class="one-left">
+            <img src="https://cdn.vectorstock.com/i/preview-2x/11/41/person-gray-photo-placeholder-woman-vector-25461141.webp"
+                alt="">
+        </div>
+        <div class="one-right">
+            <div class="one-right-one">
+                <p class="name">{{user.name}}</p>
+                <div class="address-one">
+                    <img src="assets/location.svg" alt="">
+                    <p>{{user.address}}</p>
+                </div>
+                <div class="address-one">
+                    <img src="assets/phone.svg" alt="">
+                    <p>{{user.phone}}</p>
+                </div>
+                <div class="address-one">
+                    <img src="assets/email.svg" alt="">
+                    <p>{{user.email}}</p>
+                </div>
+                <div class="address-one">
+                    <img src="assets/gender.svg" alt="">
+                    <p>{{user.gender}}</p>
+                </div>
+                <div class="address-one">
+                    <p>registerDate :- </p>
+                    <p>{{user.registerDate | date:'dd-MM-yyyy hh:mm:ss'}}</p>
+                </div>
+                <div class="address-one">
+                    <p> lastLogin :- </p>
+                    <p>{{user.lastLogin | date:'dd-MM-yyyy hh:mm:ss'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

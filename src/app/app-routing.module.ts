@@ -15,6 +15,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { MakeOrderComponent } from './components/Book/make-order/make-order.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 
 const routes: Routes = [
   {
@@ -76,6 +78,14 @@ const routes: Routes = [
   {
     path: 'make-order',
     component: MakeOrderComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'update-profile',
+    component: UpdateProfileComponent
   },
   {
     path: '**',
