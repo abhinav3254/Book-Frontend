@@ -89,7 +89,7 @@ export class BookutilityService {
   // post Ratings
 
   public postRating(value: any) {
-    const url = 'http://localhost:9091/rating/add';
+    const url = 'http://localhost:9091/ratings/add';
     var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
     return this.http.post(url, value, { headers: header });
   }

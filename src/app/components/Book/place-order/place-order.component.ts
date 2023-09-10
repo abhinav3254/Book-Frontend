@@ -16,6 +16,8 @@ export class PlaceOrderComponent implements OnInit {
   ngOnInit(): void {
     this.bookUtilityService.getAllOrders().subscribe((res) => {
       this.orders = res as Root2[];
+      console.log(res);
+
     });
   }
 
@@ -31,9 +33,20 @@ export class PlaceOrderComponent implements OnInit {
     values.bookId = JSON.stringify(bookId);
     values.rating = JSON.stringify(parseInt(JSON.stringify(myFormValue.value.rating).replace(/"/g, ''), 10));
 
-    console.log(values);
+    // console.log(values);
 
-    this.bookUtilityService.postRating(values).subscribe();
+    this.bookUtilityService.postRating(values).subscribe((res) => {
+    }, error => { // second parameter is to listen for error
+      console.log(error);
+      console.log(error.status);
+      if (error.status == 200) {
+        alert("Thanks For your Feedback");
+      } else if (error.status == 400) {
+        alert("You Already Rated");
+      } else {
+        alert("SOMETHING WENT WRONG")
+      }
+    });
 
 
   }
