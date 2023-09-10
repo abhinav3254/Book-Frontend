@@ -7,8 +7,6 @@ import { BookutilityService } from 'src/app/services/bookutility.service';
   styleUrls: ['./place-order.component.css']
 })
 export class PlaceOrderComponent implements OnInit {
-
-
   constructor(private bookUtilityService: BookutilityService
   ) { }
 
