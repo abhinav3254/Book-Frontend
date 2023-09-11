@@ -1,63 +1,26 @@
-<!-- <p *ngFor="let cartItem of cartItems">{{ cartItem | json }}</p> -->
-
-<!-- <div *ngFor="let book of cartItems">
-  <div class="container">
-    <div class="left">
-      <div class="left-main">
-        <h2>{{ book.title }}</h2>
-        <p>{{ book.description }}</p>
-         <div class="left-btn">
-          <button
-            type="button"
-            class="btn btn-primary"
-            (click)="addToCart(book.id)"
-          >
-            <img
-              src="https://img.icons8.com/?size=50&id=9671&format=png"
-              width="20px"
-              style="padding: 1px; margin: 2px 5px"
-              alt=""
-            />
-            add to cart
-          </button>
-          <p>{{ book.price | currency : "INR" }}</p>
-          <button type="button" class="btn btn-info">
-            <img
-              src="https://img.icons8.com/?size=1x&id=1675&format=png"
-              style="padding: 1px; margin: 2px 5px"
-              width="20px"
-              alt=""
-            />details
-          </button>
-        </div> 
-      </div>
-    </div>
-    <div class="right"><img src="{{ book.imageUrl }}" alt="" /></div>
-  </div>
-</div> -->
 <div class="scroll">
-  <div class="one" *ngFor="let cartItem of cartItems" style="border: 1px solid black;">
+  <div class="one" *ngFor="let cartItem of cartItems">
     <img src="{{cartItem.book.imageUrl}}" alt="">
     <div class="center">
-      <p>{{cartItem.book.title}}</p>
-      <p>{{cartItem.finalPrice}}</p>
+      <p class="center-title">{{cartItem.book.title}}</p>
+      <p class="center-finalPrice">{{cartItem.finalPrice | currency}}</p>
     </div>
     <div class="right">
       <div class="right-right-btn">
         <button type="button" class="btn btn-outline-success" (click)="increasesValue(cartItem.id)">+</button>
-        {{cartItem.quantity}}
+        <p>{{cartItem.quantity}}</p>
         <button type="button" class="btn btn-outline-danger" (click)="decreaseValue(cartItem.id)">-</button>
       </div>
     </div>
+
     <div class="right-btn">
-      <button type="button" class="btn btn-outline-success">Update</button>
       <button type="button" class="btn btn-outline-danger" (click)="deleteItemFromCartItem(cartItem.id)">Delete</button>
     </div>
   </div>
 </div>
 
-<button type="button" class="btn btn-outline-success" (click)="goToMakePayment()">CheckOut to see
-  final price and enter
-  address</button>
-<button type="button" class="btn btn-outline-danger">Delete All the Items From Cart</button>
-<button type="button" class="btn btn-outline-danger">{{sumOfFinalPrice}}</button>
+<div class="checkout-bottom">
+  <button type="button" class="btn btn-outline-success" (click)="goToMakePayment()">CheckOut</button>
+  <button type="button" class="btn btn-outline-danger">Final Price :- {{sumOfFinalPrice | currency}}</button>
+  <button type="button" class="btn btn-outline-danger">Delete All</button>
+</div>
