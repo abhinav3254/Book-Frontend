@@ -22,34 +22,66 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   // for rating
+  // postRating(myFormValue: any, bookId: any) {
+  //   // console.log(JSON.stringify(myFormValue.value.rating) + "<<<<<<<<<--------form value and bookId --> >>>>>>>>>>>   " + bookId);
+  //   const values = {
+  //     rating: '',
+  //     bookId: '',
+  //     comment: ''
+  //   }
+
+  //   // values.rating = JSON.stringify(myFormValue.value.rating);
+  //   values.bookId = JSON.stringify(bookId);
+  //   values.rating = JSON.stringify(parseInt(JSON.stringify(myFormValue.value.rating).replace(/"/g, ''), 10));
+  //   values.comment = myFormValue.value.comment;
+
+  //   console.log('values-------->' + JSON.stringify(values));
+
+  //   this.bookUtilityService.postRating(values).subscribe((res) => {
+  //   }, error => { // second parameter is to listen for error
+  //     console.log(error);
+  //     console.log(error.status);
+  //     if (error.status == 200) {
+  //       alert("Thanks For your Feedback");
+  //     } else if (error.status == 400) {
+  //       alert("You Already Rated");
+  //     } else {
+  //       alert("SOMETHING WENT WRONG")
+  //     }
+  //   });
+  // }
+
   postRating(myFormValue: any, bookId: any) {
-    // console.log(JSON.stringify(myFormValue.value.rating) + "<<<<<<<<<--------form value and bookId --> >>>>>>>>>>>   " + bookId);
+    console.log('Form Value:', myFormValue); // Add this line for debugging
+
     const values = {
       rating: '',
-      bookId: ''
+      bookId: '',
+      comment: ''
     }
 
-    // values.rating = JSON.stringify(myFormValue.value.rating);
     values.bookId = JSON.stringify(bookId);
     values.rating = JSON.stringify(parseInt(JSON.stringify(myFormValue.value.rating).replace(/"/g, ''), 10));
+    values.comment = myFormValue.value.comment;
 
-    // console.log(values);
+    console.log('Values:', values); // Add this line for debugging
 
     this.bookUtilityService.postRating(values).subscribe((res) => {
-    }, error => { // second parameter is to listen for error
-      console.log(error);
-      console.log(error.status);
-      if (error.status == 200) {
-        alert("Thanks For your Feedback");
-      } else if (error.status == 400) {
-        alert("You Already Rated");
+      // Handle the response as needed
+    }, error => {
+      console.log('Error:', error);
+      console.log('Error Status:', error.status);
+
+      if (error.status === 200) {
+        alert('Thanks For your Feedback');
+      } else if (error.status === 400) {
+        alert('You Already Rated');
       } else {
-        alert("SOMETHING WENT WRONG")
+        alert('SOMETHING WENT WRONG');
       }
     });
-
-
   }
+
 
 }
 

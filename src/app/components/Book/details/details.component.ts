@@ -100,10 +100,12 @@ class ListRating {
   id: number;
   rating: number;
   user: User;
-  constructor(id: number, rating: number, user: User) {
+  comment: string
+  constructor(id: number, rating: number, user: User, comment: string) {
     this.id = id;
     this.rating = rating;
     this.user = user;
+    this.comment = comment
   }
 }
 

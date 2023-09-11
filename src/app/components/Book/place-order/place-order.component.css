@@ -1,13 +1,18 @@
 .container {
     background-color: white;
-    height: 120px;
+    height: 200px;
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     padding: 10px;
     display: flex;
-    flex-direction: row;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.container-child {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
 }
 
 img {
@@ -18,4 +23,26 @@ img {
 
 p {
     margin: auto 5px;
+}
+
+form {
+    margin: auto;
+    width: 40%;
+}
+
+.form-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-child select {
+    margin: 2px 0px;
+}
+
+.form-child input {
+    margin: 3px 0px;
+}
+
+.submit-btn {
+    margin: 4px 0px;
 }
