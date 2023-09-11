@@ -22,5 +22,5 @@
 <div class="checkout-bottom">
   <button type="button" class="btn btn-outline-success" (click)="goToMakePayment()">CheckOut</button>
   <button type="button" class="btn btn-outline-danger">Final Price :- {{sumOfFinalPrice | currency}}</button>
-  <button type="button" class="btn btn-outline-danger">Delete All</button>
+  <button type="button" class="btn btn-outline-danger" (click)="deletAllItems()">Delete All</button>
 </div>

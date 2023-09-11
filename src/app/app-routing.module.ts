@@ -17,6 +17,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { MakeOrderComponent } from './components/Book/make-order/make-order.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
+import { ShowAllOrdersComponent } from './components/show-all-orders/show-all-orders.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'update-profile',
     component: UpdateProfileComponent
+  },
+  {
+    path: 'show-all-orders',
+    component: ShowAllOrdersComponent
   },
   {
     path: '**',

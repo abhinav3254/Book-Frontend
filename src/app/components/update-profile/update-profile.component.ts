@@ -12,7 +12,8 @@ export class UpdateProfileComponent {
   constructor(private userService: UserService) { }
 
   formSubmit(myForm: NgForm) {
-    console.log(myForm.value);
     this.userService.updateUserDetails(myForm.value).subscribe();
   }
 }
+
+

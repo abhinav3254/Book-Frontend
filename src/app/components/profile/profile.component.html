@@ -24,8 +24,13 @@
                     <p>{{user.gender}}</p>
                 </div>
                 <div class="address-one">
+                    <p>date of birth :- </p>
+                    <p>{{user.dateOfBirth
+                        | date}}</p>
+                </div>
+                <div class="address-one">
                     <p>registerDate :- </p>
-                    <p>{{user.registerDate | date:'dd-MM-yyyy hh:mm:ss'}}</p>
+                    <p>{{user.registerDate | date}}</p>
                 </div>
                 <div class="address-one">
                     <p> lastLogin :- </p>

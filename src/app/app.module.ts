@@ -39,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MakeOrderComponent } from './components/Book/make-order/make-order.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
+import { ShowAllOrdersComponent } from './components/show-all-orders/show-all-orders.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { UpdateProfileComponent } from './components/update-profile/update-profi
     PaymentComponent,
     MakeOrderComponent,
     ProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ShowAllOrdersComponent
   ],
   imports: [
     BrowserModule,

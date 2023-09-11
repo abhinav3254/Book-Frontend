@@ -8,6 +8,14 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
+
+  // delete all items from cart
+  public deletAllItems() {
+    const url = 'http://localhost:9091/cartItem/deleteAll';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
   // Get All The Items From the cart
   public showAllCartItems() {
     const url = 'http://localhost:9091/cartItem/getAll';

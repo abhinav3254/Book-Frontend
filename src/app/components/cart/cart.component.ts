@@ -56,6 +56,11 @@ export class CartComponent implements OnInit {
     window.location.reload();
   }
 
+  deletAllItems() {
+    this.cartService.deletAllItems().subscribe();
+    window.location.reload();
+  }
+
 }
 
 export interface Root {

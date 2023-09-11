@@ -20,13 +20,13 @@ export class ProfileComponent implements OnInit {
     role: '',
     gender: '',
     registerDate: '',
-    lastLogin: ''
+    lastLogin: '',
+    dateOfBirth: ''
   };
 
   ngOnInit(): void {
     this.userService.getUserDetails().subscribe((res) => {
       console.log(res);
-
       this.user = res as Root;
     });
   }
@@ -44,5 +44,6 @@ export interface Root {
   role: string
   gender: string,
   registerDate: string,
-  lastLogin: string
+  lastLogin: string,
+  dateOfBirth: string
 }
