@@ -1,0 +1,19 @@
+table {
+    margin: 40px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+table tr th {
+    border: 1px solid black;
+}
+
+table tr {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+tr td {
+    border: 1px solid black;
+    padding: 5px;
+}

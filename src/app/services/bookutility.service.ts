@@ -94,4 +94,12 @@ export class BookutilityService {
     return this.http.post(url, value, { headers: header });
   }
 
+  // get all the orders admin access
+
+  public getAllTheOrders() {
+    const url = 'http://localhost:9091/orders/show/all';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
 }

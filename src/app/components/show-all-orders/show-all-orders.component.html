@@ -1,1 +1,40 @@
-<p>show-all-orders works!</p>
+<table border="1">
+    <tr>
+        <th>Order Id</th>
+        <th>User Name</th>
+        <th>Book Title</th>
+        <th>Book Rating</th>
+        <th>Book Image</th>
+        <th>Payment Amount</th>
+        <th>Final Price</th>
+    </tr>
+    <tr *ngFor="let order of ordersList">
+        <td>{{ order.id }}</td>
+        <td>{{ order.user.username }}</td>
+        <td>
+            <ng-container *ngFor="let cartItem of order.cart.cartItems">
+                {{ cartItem.book.title }}
+                <br>
+            </ng-container>
+        </td>
+        <td>
+            <ng-container *ngFor="let cartItem of order.cart.cartItems">
+                {{ cartItem.book.averageRating }}
+                <br>
+            </ng-container>
+        </td>
+        <td>
+            <ng-container *ngFor="let cartItem of order.cart.cartItems">
+                <img [src]="cartItem.book.imageUrl" alt="Book Image" width="100">
+                <br>
+            </ng-container>
+        </td>
+        <td>{{ order.payment.amount }}</td>
+        <td>
+            <ng-container *ngFor="let cartItem of order.cart.cartItems">
+                {{ cartItem.finalPrice | currency }}
+                <br>
+            </ng-container>
+        </td>
+    </tr>
+</table>
