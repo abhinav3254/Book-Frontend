@@ -20,7 +20,7 @@ export class PaymentComponent {
   }
 
   paymentForm(myForm: NgForm) {
-    console.log(myForm);
+    // console.log(myForm);
     this.bookUtilityService.makePayment(myForm).subscribe();
     this.route.navigateByUrl('/make-order');
   }

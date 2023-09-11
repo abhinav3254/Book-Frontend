@@ -2,25 +2,24 @@
 
 <!-- {{orders[0].cart | json}} -->
 <div *ngFor="let order of orders">
-    <div class="container" *ngFor="let cartItem of order.cart.cartItems">
-        <img src="{{cartItem.book.imageUrl}}" alt="">
-        <p>{{cartItem.book.title}}</p>
-        <p>{{cartItem.quantity}}</p>
-        <p>{{order.orderDate | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+  <div class="container" *ngFor="let cartItem of order.cart.cartItems">
+    <img src="{{ cartItem.book.imageUrl }}" alt="" />
+    <p>{{ cartItem.book.title }}</p>
+    <p>{{ cartItem.quantity }}</p>
+    <p>{{ order.orderDate | date }}</p>
 
-        <form #myRating="ngForm" (submit)="postRating(myRating,cartItem.book.id)">
-            <select class="select-css" id="authorSelect" ngModel name="rating">
-                <option value="" disabled="disabled" style="display: none;">Rate The Book</option>
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
-            </select>
-            <button type="submit">post</button>
-        </form>
-
-        {{myRating.value | json}}
-
-    </div>
+    <form #myRating="ngForm" (submit)="postRating(myRating, cartItem.book.id)">
+      <select class="select-css" id="authorSelect" ngModel name="rating">
+        <option value="" disabled="disabled" style="display: none">
+          Rate The Book
+        </option>
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+      </select>
+      <button type="submit">post</button>
+    </form>
+  </div>
 </div>

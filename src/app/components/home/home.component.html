@@ -31,16 +31,28 @@
     <div class="row">
       <div class="col" *ngFor="let book of books">
         <div class="one">
-          <img src="{{ book.imageUrl }}" alt="">
-          <h4>{{book.title}}</h4>
+          <img src="{{ book.imageUrl }}" alt="" />
+          <h4>{{ book.title }}</h4>
+          <h4>Rating :- {{ book.averageRating }}</h4>
           <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-danger" type="button" (click)="addToCart(book.id)">Cart</button>
-            <button class="btn btn-success" type="button" (click)="viewDetails(book.id)"
-              routerLink="/details">Details</button>
+            <button
+              class="btn btn-danger"
+              type="button"
+              (click)="addToCart(book.id)"
+            >
+              Cart
+            </button>
+            <button
+              class="btn btn-success"
+              type="button"
+              (click)="viewDetails(book.id)"
+              routerLink="/details"
+            >
+              Details
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

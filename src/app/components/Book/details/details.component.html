@@ -1,25 +1,126 @@
 <!-- <img src="{{bookDetails.imageUrl}}" alt=""> -->
-
+<!-- <img src="" class="img-fluid" alt="..."> -->
+<!--
+    
 <div class="container" id="c1">
-    <!-- <img src="" class="img-fluid" alt="..."> -->
-    <img src="{{bookDetails.imageUrl}}" class="rounded mx-auto d-block" alt="...">
-    <div class="container" style="text-align: center;">
-        <h1 id="h1" style="margin-top: 2rem;">{{bookDetails.title}}</h1>
-        <p id="p1" style="font-size: 1.2rem;">{{bookDetails.description}}</p>
+  
+  <img src="{{ books.imageUrl }}" class="rounded mx-auto d-block" alt="..." />
+  <div class="container" style="text-align: center">
+    <h1 id="h1" style="margin-top: 2rem">{{ bookDetails.title }}</h1>
+    <p id="p1" style="font-size: 1.2rem">{{ bookDetails.description }}</p>
 
-        <div class="container" id="publisher-author">
-            <button type="button" class="btn btn-primary btn-lg">{{bookDetails.author.authorName}}</button>
-            <button type="button" class="btn btn-secondary btn-lg">{{bookDetails.publishers.publisherName}}</button>
-        </div>
-
-        <div class="container" id="publisher-author">
-            <button type="button" class="btn btn-outline-success">{{bookDetails.genre}}</button>
-            <button type="button" class="btn btn-outline-danger">{{bookDetails.category}}</button>
-        </div>
-
-        <button type="button" class="btn btn-danger">{{bookDetails.price | currency:'INR'}}</button>
-
-
-
+    <div class="container" id="publisher-author">
+      <button type="button" class="btn btn-primary btn-lg">
+        {{ bookDetails.author.authorName }}
+      </button>
+      <button type="button" class="btn btn-secondary btn-lg">
+        {{ bookDetails.publishers.publisherName }}
+      </button>
     </div>
+
+    <div class="container" id="publisher-author">
+      <button type="button" class="btn btn-outline-success">
+        {{ bookDetails.genre }}
+      </button>
+      <button type="button" class="btn btn-outline-danger">
+        {{ bookDetails.category }}
+      </button>
+    </div>
+
+    <button type="button" class="btn btn-danger">
+      {{ bookDetails.price | currency : "INR" }}
+    </button>
+  </div>
 </div>
+-->
+<!-- 
+<div>
+</div> -->
+<!-- {{ books | json }} -->
+
+<div class="container">
+  <div class="top">
+    <img src="{{ books.imageUrl }}" alt="" />
+    <div class="right">
+      <h2 class="title-1">{{ books.title }}</h2>
+      <p class="price-1">{{ books.price | currency }}</p>
+      <a>Author :- {{ books.author.authorName }}</a>
+      <a>Publisher:- {{ books.publishers.publisherName }}</a>
+      <a>Category :- {{ books.category }}</a>
+      <a>Ratings :- {{ books.averageRating }} ⭐</a>
+    </div>
+  </div>
+  <hr class="style18" />
+
+  <div class="about-book">
+    <p class="about-book-p">About Book</p>
+    <p>{{ books.description }}</p>
+  </div>
+  <hr class="style18" />
+  <!-- Product Details Page Start From here -->
+  <div class="top-second">
+    <p class="product-details-heading">Product Details</p>
+    <div class="table">
+      <p>ISBN :-</p>
+      <p>{{ books.isbn }}</p>
+    </div>
+    <div class="table">
+      <p>Publisher Name :-</p>
+      <p>{{ books.publishers.publisherName }}</p>
+    </div>
+    <div class="table">
+      <p>Publisher Country :-</p>
+      <p>{{ books.publishers.country }}</p>
+    </div>
+    <div class="table">
+      <p>Page Count :-</p>
+      <p>{{ books.pageCount }}</p>
+    </div>
+    <div class="table" *ngIf="true == books.bookStatus">
+      <p>Page Staus :-</p>
+      <p>PUBLISHED</p>
+    </div>
+    <div class="table" *ngIf="false == books.bookStatus">
+      <p>Page Staus</p>
+      <p>NOT PUBLISHED</p>
+    </div>
+    <div class="table">
+      <p>Publish Date and Time :-</p>
+      <p>{{ books.publishDate | date }}</p>
+    </div>
+  </div>
+  <hr class="style18" />
+  <!-- For Ratings -->
+  <div class="just-for-fun">
+    <p>Ratings Posted By User:-</p>
+
+    <div class="scroll">
+      <div class="list-ratings">
+        <div class="ratings-of-book" *ngFor="let rating of books.listRatings">
+          <div class="empty"></div>
+          <div class="ratings-flex-box-1">
+            <p class="ratings-of-book-username">
+              <img
+                src="assets\user-placeholder.svg"
+                style="width: 24px; height: 24px"
+                alt=""
+              />
+              {{ rating.user.username }}
+            </p>
+          </div>
+          <p class="ratings-of-book-rating">
+            Ratings Given:- {{ rating.rating }} ⭐
+          </p>
+          <p class="ratings-of-book-username">
+            Posted Date :- {{ rating.ratingPostDate | date }}
+          </p>
+          <div class="ratings-of-book-comments">
+            saved this space for comments in future
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 120px"></div>

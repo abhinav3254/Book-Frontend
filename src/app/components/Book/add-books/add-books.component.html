@@ -2,23 +2,48 @@
   <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <div class="form-inside">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-          name="image" />
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="image"
+        />
         <label for="floatingInput">Image Link</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-          name="price" />
+        <input
+          type="number"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="price"
+        />
         <label for="floatingInput">Price</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" ngModel
-          name="title" />
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="name@example.com"
+          ngModel
+          name="title"
+        />
         <label for="floatingInput">Title</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInput" placeholder="isbn" ngModel name="pageCount" />
+        <input
+          type="number"
+          class="form-control"
+          id="floatingInput"
+          placeholder="isbn"
+          ngModel
+          name="pageCount"
+        />
         <label for="floatingInput">Page Count</label>
       </div>
 
@@ -28,25 +53,41 @@
       </div> -->
 
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInput" placeholder="isbn" ngModel name="isbn" />
+        <input
+          type="number"
+          class="form-control"
+          id="floatingInput"
+          placeholder="isbn"
+          ngModel
+          name="isbn"
+        />
         <label for="floatingInput">isbn</label>
       </div>
 
       <!-- For Date -->
       <div class="container-date">
-        <mat-form-field style="width: 100%; margin: 10px 0px;">
+        <mat-form-field style="width: 100%; margin: 10px 0px">
           <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="picker" ngModel name="date">
+          <input matInput [matDatepicker]="picker" ngModel name="date" />
           <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
 
       <label>Category Name</label>
 
-      <select class=" select-css" id="categorySelect" ngModel name="category">
-        <option value="{{ category.categoryName }}" *ngFor="let category of categories">
+      <select class="select-css" id="categorySelect" ngModel name="category">
+        <option value="" disabled="disabled" style="display: none">
+          Select Category
+        </option>
+        <option
+          value="{{ category.categoryName }}"
+          *ngFor="let category of categories"
+        >
           {{ category.categoryName }}
         </option>
       </select>
@@ -55,6 +96,9 @@
       <label>Author Name</label>
 
       <select class="select-css" id="authorSelect" ngModel name="authorId">
+        <option value="" disabled="disabled" style="display: none">
+          Select Author
+        </option>
         <option value="{{ author.id }}" *ngFor="let author of authors">
           {{ author.id }} || {{ author.authorName }}
         </option>
@@ -66,26 +110,39 @@
       <label>Publish Status</label>
 
       <select class="select-css" id="authorSelect" ngModel name="status">
-        <option value="true">
-          Published
+        <option value="" disabled="disabled" style="display: none">
+          Publish Status
         </option>
-        <option value="false">
-          Not Published
-        </option>
+        <option value="true">Published</option>
+        <option value="false">Not Published</option>
       </select>
 
       <!-- Publisher Spinner -->
       <label>Publisher Name</label>
 
-      <select class="select-css" id="publisherSelect" ngModel name="publisherId">
+      <select
+        class="select-css"
+        id="publisherSelect"
+        ngModel
+        name="publisherId"
+      >
+        <option value="" disabled="disabled" style="display: none">
+          Publisher Name
+        </option>
         <option value="{{ publisher.id }}" *ngFor="let publisher of publishers">
           {{ publisher.id }} || {{ publisher.publisherName }}
         </option>
       </select>
 
       <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"
-          ngModel name="description"></textarea>
+        <textarea
+          class="form-control"
+          placeholder="Leave a comment here"
+          id="floatingTextarea2"
+          style="height: 100px"
+          ngModel
+          name="description"
+        ></textarea>
         <label for="floatingTextarea2">Description</label>
       </div>
 
