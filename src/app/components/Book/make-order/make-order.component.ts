@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpResponse } from '@angular/common/http';
+
 import { BookutilityService } from 'src/app/services/bookutility.service';
 
 @Component({
@@ -16,9 +18,14 @@ export class MakeOrderComponent {
   }
 
 
+
   public makeOrder(myFormValue: any) {
     this.bookUtilityService.makeOrder(myFormValue).subscribe();
-    this.route.navigateByUrl('/home');
+    alert('order placed');
+    this.route.navigateByUrl('/order');
   }
+
+
+
 
 }

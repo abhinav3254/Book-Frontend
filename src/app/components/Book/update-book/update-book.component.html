@@ -1,0 +1,15 @@
+<div class="conatiner">
+    <form #MyForm="ngForm" (submit)="updateBook(MyForm.value)">
+
+        <input type="text" readonly [(ngModel)]="bookId" name="bookId" id="inputPassword5" class="form-control"
+            aria-describedby="passwordHelpBlock">
+
+        <input type="text" id="inputPassword5" ngModel name="quantity" placeholder="Quantity" class="form-control"
+            aria-describedby="passwordHelpBlock">
+
+        <button type="submit" value="submit" class="btn btn-success">Update</button>
+
+    </form>
+</div>
+
+{{error|json}}

@@ -11,6 +11,12 @@ export class BookutilityService {
 
   constructor(private http: HttpClient) { }
 
+  public UpdateQuantity(value: any) {
+    const url = 'http://localhost:9091/book/updateQuantity';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.post(url, value, { headers: header });
+  }
+
   public getBookById(id: any): Observable<any> {
     const url = 'http://localhost:9091/book/' + id;
     var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
@@ -98,6 +104,13 @@ export class BookutilityService {
 
   public getAllTheOrders() {
     const url = 'http://localhost:9091/orders/show/all';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
+  // get refund
+  public getRefund() {
+    const url = 'http://localhost:9091/orders/refund';
     var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
     return this.http.get(url, { headers: header });
   }

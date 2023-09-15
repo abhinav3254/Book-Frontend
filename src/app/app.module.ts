@@ -40,6 +40,9 @@ import { MakeOrderComponent } from './components/Book/make-order/make-order.comp
 import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { ShowAllOrdersComponent } from './components/show-all-orders/show-all-orders.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { UpdateBookComponent } from './components/Book/update-book/update-book.component';
+import { RefundComponent } from './components/refund/refund.component';
 
 
 @NgModule({
@@ -68,7 +71,10 @@ import { ShowAllOrdersComponent } from './components/show-all-orders/show-all-or
     MakeOrderComponent,
     ProfileComponent,
     UpdateProfileComponent,
-    ShowAllOrdersComponent
+    ShowAllOrdersComponent,
+    InventoryComponent,
+    UpdateBookComponent,
+    RefundComponent
   ],
   imports: [
     BrowserModule,

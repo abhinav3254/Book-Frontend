@@ -1,0 +1,14 @@
+<table>
+    <th>Book Id</th>
+    <th>Book Name</th>
+    <th>Book Image</th>
+    <th>Book Quantity</th>
+    <th>Operations</th>
+    <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td><img src="{{book.imageUrl}}" style="width: 25%;" alt=""></td>
+        <td>{{book.bookQuantity}}</td>
+        <td><button (click)="updateBook(book.id)">Update Book</button></td>
+    </tr>
+</table>

@@ -39,10 +39,20 @@ export class CartComponent implements OnInit {
   goToMakePayment() {
     this.route.navigate(['/payment', { amountData: this.sumOfFinalPrice }]);
   }
-
+  error: any;
   increasesValue(value: any) {
-    this.cartService.increasesValueInTheCart(value).subscribe();
-    window.location.reload();
+    this.cartService.increasesValueInTheCart(value).subscribe((res) => {
+      console.log(JSON.stringify(res));
+    }, error => { // second parameter is to listen for error
+      console.log(error);
+      this.error = JSON.stringify(error.error.text);
+      console.log(error.status);
+      if (error.status == 200) {
+        window.location.reload();
+      } else if (error.status == 400) {
+        alert("Limited Stock")
+      }
+    });
   }
 
   decreaseValue(value: any) {
