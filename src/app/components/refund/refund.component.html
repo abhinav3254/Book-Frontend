@@ -1,2 +1,10 @@
-<p>refund works!</p>
-{{refund|json}}
+<div class="main">
+    <div *ngFor="let refund of refunds" class="one">
+        <p>Order Id:- {{refund.id}}</p>
+        <p>User Name:- {{refund.user.name}}</p>
+        <p>User Email:- {{refund.user.email}}</p>
+        <p>Refund Amount:- {{refund.payment.amount | currency :'INR'}}</p>
+        <p>Refund Bank Name :- {{refund.payment.bankName}}</p>
+        <p style="color: green;">Refund Status : - REFUNDED</p>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.main {
+    margin: 0px 20px;
+    padding: 20px;
+}
+
+.one {
+    margin: 40px auto;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    border: 1px solid black;
+}
