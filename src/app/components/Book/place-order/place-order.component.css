@@ -21,6 +21,17 @@ img {
     margin-left: 10px;
 }
 
+.inside-one {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.p-1 {
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto 10px;
+}
+
 p {
     margin: auto 5px;
 }

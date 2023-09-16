@@ -1,13 +1,14 @@
-<!-- {{orders|json}} -->
-
-<!-- {{orders[0].cart | json}} -->
+<!-- Don't delete this one Abhinav -->
 <div *ngFor="let order of orders">
-  <div class="container" *ngFor="let cartItem of order.cart.cartItems">
+  <div class="container" *ngFor="let cartItem of order?.cart?.cartItems">
     <div class="container-child">
-      <img src="{{ cartItem.book.imageUrl }}" alt="" />
-      <p>{{ cartItem.book.title }}</p>
-      <p>{{ cartItem.quantity }}</p>
-      <p>{{ order.orderDate | date }}</p>
+      <img src="{{ cartItem?.book?.imageUrl }}" alt="Book Image" />
+      <div class="inside-one">
+        <p class="p-1">Order ID: {{ order?.id }}</p>
+        <p class="p-1">Book Name: {{ cartItem?.book?.title }}</p>
+        <p class="p-1">Book Quantity: {{ cartItem.quantity }}</p>
+        <p class="p-1">Order Date : {{ order.orderDate | date }}</p>
+      </div>
     </div>
 
     <form #myRating="ngForm" (submit)="postRating(myRating, cartItem.book.id)">

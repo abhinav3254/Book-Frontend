@@ -35,19 +35,13 @@
           <h4>{{ book.title }}</h4>
           <h4>Rating :- {{ book.averageRating }}</h4>
           <div class="d-grid gap-2 col-6 mx-auto">
-            <button
-              class="btn btn-danger"
-              type="button"
-              (click)="addToCart(book.id)"
-            >
+            <button type="button" *ngIf="book.bookQuantity==0" disabled style="color: rgb(208, 28, 28);"
+              class="btn btn-warning">Not
+              Available</button>
+            <button *ngIf="book.bookQuantity>0" class="btn btn-danger" type="button" (click)="addToCart(book.id)">
               Cart
             </button>
-            <button
-              class="btn btn-success"
-              type="button"
-              (click)="viewDetails(book.id)"
-              routerLink="/details"
-            >
+            <button class="btn btn-success" type="button" (click)="viewDetails(book.id)" routerLink="/details">
               Details
             </button>
           </div>

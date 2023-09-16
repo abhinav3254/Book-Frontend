@@ -9,30 +9,30 @@
         <th>Final Price</th>
     </tr>
     <tr *ngFor="let order of ordersList">
-        <td>{{ order.id }}</td>
-        <td>{{ order.user.username }}</td>
+        <td>{{ order?.id }}</td>
+        <td>{{ order?.user?.username }}</td>
         <td>
-            <ng-container *ngFor="let cartItem of order.cart.cartItems">
-                {{ cartItem.book.title }}
+            <ng-container *ngFor="let cartItem of order?.cart?.cartItems">
+                {{ cartItem?.book?.title }}
                 <br>
             </ng-container>
         </td>
         <td>
-            <ng-container *ngFor="let cartItem of order.cart.cartItems">
-                {{ cartItem.book.averageRating }}
+            <ng-container *ngFor="let cartItem of order?.cart?.cartItems">
+                {{ cartItem?.book?.averageRating }}
                 <br>
             </ng-container>
         </td>
         <td>
-            <ng-container *ngFor="let cartItem of order.cart.cartItems">
-                <img [src]="cartItem.book.imageUrl" alt="Book Image" width="100">
+            <ng-container *ngFor="let cartItem of order?.cart?.cartItems">
+                <img class="img-tag-one" [src]="cartItem?.book?.imageUrl" alt="Book Image" width="100">
                 <br>
             </ng-container>
         </td>
-        <td>{{ order.payment.amount }}</td>
+        <td>{{ order?.payment?.amount }}</td>
         <td>
-            <ng-container *ngFor="let cartItem of order.cart.cartItems">
-                {{ cartItem.finalPrice | currency }}
+            <ng-container *ngFor="let cartItem of order?.cart?.cartItems">
+                {{ cartItem?.finalPrice | currency }}
                 <br>
             </ng-container>
         </td>
