@@ -3,7 +3,11 @@
     <img src="{{cartItem.book.imageUrl}}" alt="">
     <div class="center">
       <p class="center-title">{{cartItem.book.title}}</p>
-      <p class="center-finalPrice">{{cartItem.finalPrice | currency}}</p>
+      <p class="center-bookprice">Book Price :- {{cartItem.bookPrice | currency:'INR'}}</p>
+      <p class="center-cgst">CGST :- {{cartItem.cgst | currency:'INR'}}</p>
+      <p class="center-cgst">SGST :- {{cartItem.cgst | currency:'INR'}}</p>
+      <p class="center-discount">DISCOUNT :- {{cartItem.discount | currency:'INR'}}</p>
+      <p class="center-finalPrice">FINAL PRICE :- {{cartItem.finalPrice | currency:'INR'}}</p>
     </div>
     <div class="right">
       <div class="right-right-btn">
@@ -21,6 +25,6 @@
 
 <div class="checkout-bottom">
   <button type="button" class="btn btn-outline-success" (click)="goToMakePayment()">CheckOut</button>
-  <button type="button" class="btn btn-outline-danger">Final Price :- {{sumOfFinalPrice | currency}}</button>
+  <button type="button" class="btn btn-outline-danger">Final Price :- {{sumOfFinalPrice | currency:'INR'}}</button>
   <button type="button" class="btn btn-outline-danger" (click)="deletAllItems()">Delete All</button>
 </div>

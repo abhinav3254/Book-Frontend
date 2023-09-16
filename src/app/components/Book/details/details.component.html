@@ -3,7 +3,7 @@
     <img src="{{ books.imageUrl }}" alt="" />
     <div class="right">
       <h2 class="title-1">{{ books.title }}</h2>
-      <p class="price-1">{{ books.price | currency }}</p>
+      <p class="price-1">{{ books.price | currency:'INR' }}</p>
       <a>Author :- {{ books.author.authorName }}</a>
       <a>Publisher:- {{ books.publishers.publisherName }}</a>
       <a>Category :- {{ books.category }}</a>
