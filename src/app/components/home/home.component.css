@@ -1,3 +1,48 @@
+.up-coming-books {
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+.up-coming-books p {
+    color: white;
+    font-size: 2rem;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    height: 250px;
+}
+
+.parent-scroll {
+    display: flex;
+    flex-direction: row;
+}
+
+.marquee-btn {
+    /* border: 5px solid yellow; */
+    height: 250px;
+}
+
+.marquee-btn-one {
+    display: flex;
+    flex-direction: row;
+}
+
+.scroll-one-div {
+    /* border: 1px solid red; */
+    height: 200px;
+}
+
+.scroll-one-div img {
+    height: 100%;
+    margin: 5px;
+}
+
 .one {
     display: flex;
     flex-direction: column;
@@ -8,6 +53,7 @@
     border: 1px solid black;
     transition: all 0.5s;
     background-color: #F0F0F0;
+    text-align: center;
 }
 
 

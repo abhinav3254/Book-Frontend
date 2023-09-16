@@ -12,10 +12,16 @@ import { CartToastComponent } from '../Toasts/cart-toast/cart-toast.component';
 })
 export class HomeComponent implements OnInit {
   books: Book[] = [];
+  latestbooks: Book[] = [];
   constructor(private homeServices: HomeService, public nav: NavbarService, private bookUtitlity: BookutilityService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.nav.show();
+
+    // to get upcoming books
+    this.getAllLatestBook();
+
+
     // to get all the books api call
     this.homeServices.getAllBooks().subscribe((res) => {
       console.log(res);
@@ -61,6 +67,17 @@ export class HomeComponent implements OnInit {
 
   public viewDetails(id: any) {
     window.localStorage.setItem('detailsToShow', id);
+  }
+
+  // to get latest book
+
+  public getAllLatestBook() {
+    this.bookUtitlity.getUpcomingBooks().subscribe(
+      (res) => {
+        console.log(res);
+        this.latestbooks = res as Book[];
+      }
+    );
   }
 
 }

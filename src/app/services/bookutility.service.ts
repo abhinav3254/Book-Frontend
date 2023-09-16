@@ -11,6 +11,12 @@ export class BookutilityService {
 
   constructor(private http: HttpClient) { }
 
+  public getUpcomingBooks(): Observable<any> {
+    const url = 'http://localhost:9091/book/upcomingBooks';
+    var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));
+    return this.http.get(url, { headers: header });
+  }
+
   public UpdateQuantity(value: any) {
     const url = 'http://localhost:9091/book/updateQuantity';
     var header = new HttpHeaders().set("Authorization", "Bearer " + window.localStorage.getItem("token"));

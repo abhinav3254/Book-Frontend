@@ -1,28 +1,18 @@
-<!-- *ngFor="let book of booksDemo" -->
-<!--<div class="col-sm" *ngFor="let book of books">  -->
-
-<!-- <div *ngFor="let book of books">
-  <div class="container">
-    <div class="left">
-      <div class="left-main">
-        <h2>{{ book.title }}</h2>
-        <p>{{ book.description }}</p>
-        <div class="left-btn">
-          <button type="button" class="btn btn-primary" (click)="addToCart(book.id)">
-            <img src="assets/cart-svgrepo-com.svg" width="20px" style="padding: 1px; margin: 2px 5px" alt="" />
-            add to cart
-          </button>
-          <p>{{ book.price | currency : "INR" }}</p>
-          <button type="button" class="btn btn-info" (click)="viewDetails(book.id)" routerLink="/details">
-            <img src="assets/details-so-svgrepo-com.svg" style="padding: 1px; margin: 2px 5px" width="20px" alt="" />
-            details
-          </button>
+<div class="up-coming-books">
+  <p>UPCOMING BOOKS</p>
+  <div class="scrollmenu">
+    <div class="parent-scroll">
+      <marquee class="marquee-btn" behavior="alternate">
+        <div class="marquee-btn-one">
+          <div class="scroll-one-div" *ngFor="let book of latestbooks">
+            <img src="{{book.imageUrl}}" alt="">
+          </div>
         </div>
-      </div>
+      </marquee>
     </div>
-    <div class="right"><img src="{{ book.imageUrl }}" alt="" /></div>
   </div>
-</div> -->
+</div>
+
 
 <div class="container" id="skills">
   <p class="intro-about text-center"></p>
