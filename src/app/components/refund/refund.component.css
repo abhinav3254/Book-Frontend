@@ -5,9 +5,9 @@
 
 .one {
     margin: 40px auto;
-    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.2rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }

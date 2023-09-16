@@ -32,7 +32,7 @@
         <td>{{ order?.payment?.amount }}</td>
         <td>
             <ng-container *ngFor="let cartItem of order?.cart?.cartItems">
-                {{ cartItem?.finalPrice | currency }}
+                {{ cartItem?.finalPrice | currency:'INR' }}
                 <br>
             </ng-container>
         </td>

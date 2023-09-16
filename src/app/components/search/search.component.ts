@@ -55,6 +55,7 @@ export interface Book {
   description: string
   category: string
   averageRating: number
+  bookQuantity: number
   listRatings: ListRating[]
 }
 

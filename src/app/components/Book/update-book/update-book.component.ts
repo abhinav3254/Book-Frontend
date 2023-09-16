@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { BookutilityService } from 'src/app/services/bookutility.service';
 
 
@@ -12,7 +12,7 @@ export class UpdateBookComponent implements OnInit {
   book: any;
   bookId: any;
 
-  constructor(private route: ActivatedRoute, private bookUtitlity: BookutilityService) { }
+  constructor(private route: Router, private bookUtitlity: BookutilityService) { }
 
   ngOnInit() {
     this.bookId = window.localStorage.getItem('bookId-1');
@@ -36,6 +36,7 @@ export class UpdateBookComponent implements OnInit {
         alert("something went wrong");
       }
     });
+    this.route.navigateByUrl('/inventory');
   }
 }
 

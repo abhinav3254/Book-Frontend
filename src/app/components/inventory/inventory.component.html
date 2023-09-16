@@ -9,6 +9,7 @@
         <td>{{book.title}}</td>
         <td><img src="{{book.imageUrl}}" style="width: 25%;" alt=""></td>
         <td>{{book.bookQuantity}}</td>
-        <td><button (click)="updateBook(book.id)">Update Book</button></td>
+        <td><button type="button" style="margin: 10px;" class="btn btn-success"
+                (click)="updateBook(book.id)">Update</button></td>
     </tr>
 </table>
