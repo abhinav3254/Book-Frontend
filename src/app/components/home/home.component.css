@@ -48,11 +48,11 @@ div.scrollmenu {
     flex-direction: column;
     margin: 10px;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 20px;
     border: 1px solid black;
     transition: all 0.5s;
-    background-color: #F0F0F0;
+    background-color: #E9E8E8;
     text-align: center;
 }
 
