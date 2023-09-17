@@ -16,22 +16,22 @@ export class AddPublisherComponent {
 
   public onSubmit(myForm: NgForm) {
     console.log(myForm.value);
-    // this.addPublisherServices.addPublisher(myForm.value).subscribe((res) => {
-    //   console.log(res);
-    // }, error => { // second parameter is to listen for error
-    //   console.log(error);
-    //   this.error = JSON.stringify(error.error.text);
-    //   console.log(error.status);
-    //   if (error.status == 200) {
-    //     // toast
-    //     const durationInSeconds = 2;
-    //     this._snackBar.openFromComponent(AddedToastComponent, {
-    //       duration: durationInSeconds * 1000,
-    //     });
-    //   } else {
-    //     alert(error.error);
-    //   }
-    // });
+    this.addPublisherServices.addPublisher(myForm.value).subscribe((res) => {
+      console.log(res);
+    }, error => { // second parameter is to listen for error
+      console.log(error);
+      this.error = JSON.stringify(error.error.text);
+      console.log(error.status);
+      if (error.status == 200) {
+        // toast
+        const durationInSeconds = 2;
+        this._snackBar.openFromComponent(AddedToastComponent, {
+          duration: durationInSeconds * 1000,
+        });
+      } else {
+        alert(error.error);
+      }
+    });
   }
 
 }
