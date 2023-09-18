@@ -20,8 +20,19 @@ export class MakeOrderComponent {
 
 
   public makeOrder(myFormValue: any) {
-    this.bookUtilityService.makeOrder(myFormValue).subscribe();
-    alert('order placed');
+    this.bookUtilityService.makeOrder(myFormValue).subscribe(
+      (res) => {
+        console.log('order subscribe');
+
+        console.log(res);
+
+      }, error => { // second parameter is to listen for error
+        if (error.status == 200) {
+          alert('order placed');
+        } else {
+          alert("order can't be placed");
+        }
+      });
     this.route.navigateByUrl('/order');
   }
 
