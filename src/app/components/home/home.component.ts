@@ -43,20 +43,29 @@ export class HomeComponent implements OnInit {
     });
   }
   error: any;
-
+  errorAddToCart: any;
   // Add Book To the Cart Items
 
 
   addToCart(bookId: any) {
-    console.log('------>' + bookId);
+    // console.log('------>' + bookId);
     this.bookUtitlity.addToCartItem(bookId).subscribe((res) => {
       console.log(res);
+    }, error => { // second parameter is to listen for error
+      // console.log(error);
+      this.errorAddToCart = JSON.stringify(error.error.text);
+      // console.log(error.status);
+      if (error.status == 200) {
+        alert(error.error.text);
+      } else {
+        alert(error.error);
+      }
     });
     // toast
-    const durationInSeconds = 2;
-    this._snackBar.openFromComponent(CartToastComponent, {
-      duration: durationInSeconds * 1000,
-    });
+    // const durationInSeconds = 2;
+    // this._snackBar.openFromComponent(CartToastComponent, {
+    //   duration: durationInSeconds * 1000,
+    // });
   }
 
   hidden = false;
