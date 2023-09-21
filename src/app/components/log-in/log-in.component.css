@@ -11,6 +11,11 @@
     text-align: center;
 }
 
+.img-login {
+    height: 200px;
+    margin: 20px;
+}
+
 .container h1 {
     font-family: cursive;
     font-size: 3rem;

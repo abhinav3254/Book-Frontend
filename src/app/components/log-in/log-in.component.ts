@@ -19,20 +19,27 @@ export class LogInComponent implements OnInit {
   }
 
   public onSubmit(myFrom: NgForm) {
-    console.log(myFrom.value);
-    this.logInService.logInUser(myFrom.value).subscribe((res) => {
-    }, error => { // second parameter is to listen for error
-      console.log(error);
-      this.error = JSON.stringify(error.error.text);
-      console.log(error.status);
-      if (error.status == 200) {
-        alert("welcome!" + myFrom.value.username);
-        window.localStorage.setItem("token", error.error.text);
-        this.route.navigateByUrl("/home");
-      } else {
-        alert("Wrong Credentails");
-      }
-    });
+
+    if (JSON.stringify(myFrom.value.username).length < 5) {
+      alert('Username is too short')
+    } else if (JSON.stringify(myFrom.value.password).length < 5) {
+      alert("Password is too short!!")
+    } else {
+
+      this.logInService.logInUser(myFrom.value).subscribe((res) => {
+      }, error => { // second parameter is to listen for error
+        console.log(error);
+        this.error = JSON.stringify(error.error.text);
+        console.log(error.status);
+        if (error.status == 200) {
+          alert("welcome!" + myFrom.value.username);
+          window.localStorage.setItem("token", error.error.text);
+          this.route.navigateByUrl("/home");
+        } else {
+          alert("Wrong Credentails");
+        }
+      });
+    }
   }
 
 }

@@ -8,3 +8,15 @@
     background-color: white;
     border-radius: 2rem;
 }
+
+.conatiner img {
+    margin: 2rem auto;
+    width: 25%;
+}
+
+.make-payment-p {
+    margin: 10px auto 20px auto;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

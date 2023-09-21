@@ -19,10 +19,27 @@ export class PaymentComponent {
     console.log(this.amountData);
   }
 
+
+
   paymentForm(myForm: NgForm) {
-    // console.log(myForm);
+    // const expiryDateString = myForm.value.expiryDate;
+    // const expiryDate = new Date(expiryDateString);
+    // const currentDate = new Date();
+    // // console.log(myForm);
+    // if (JSON.stringify(myForm.value.cardNumber).length != 16) {
+    //   alert('Invalid Card Number')
+    // } else if (JSON.stringify(myForm.value.bankName).length < 1) {
+    //   alert('INVALID BANK NAME');
+    // } else if (JSON.stringify(myForm.value.nameOnCard).length < 1) {
+    //   alert('INVALID NAME');
+    // } else if (JSON.stringify(myForm.value.cvv).length != 3) {
+    //   alert('Invalid CVV');
+    // } else if (expiryDate < currentDate) {
+    //   alert('INVALID DATE')
+    // } else {
     this.bookUtilityService.makePayment(myForm).subscribe();
     this.route.navigateByUrl('/make-order');
+    // }
   }
 
 }
